@@ -1,6 +1,7 @@
 //! # --- Day 16: Ticket Translation ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/16>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/16/input>_
 //!
 //! As you're walking to yet another connecting flight, you realize that one of the legs of your re-routed trip coming up is on a high-speed train. However, the train ticket you were given is in a language you don't understand. You should probably figure out what it says before you get to the train station after the next flight.
@@ -13,7 +14,7 @@
 //!
 //! Each ticket is represented by a single line of comma-separated values. The values are the numbers on the ticket in the order they appear; every ticket has the same format. For example, consider this ticket:
 //!
-//! ```
+//! ```text
 //! .--------------------------------------------------------.
 //! | ????: 101    ?????: 102   ??????????: 103     ???: 104 |
 //! |                                                        |
@@ -28,7 +29,7 @@
 //!
 //! For example, suppose you have the following notes:
 //!
-//! ```
+//! ```text
 //! class: 1-3 or 5-7
 //! row: 6-11 or 33-44
 //! seat: 13-40 or 45-50
@@ -55,7 +56,7 @@
 //!
 //! For example, suppose you have the following notes:
 //!
-//! ```
+//! ```text
 //! class: 0-1 or 4-19
 //! row: 0-5 or 8-19
 //! seat: 0-13 or 16-19

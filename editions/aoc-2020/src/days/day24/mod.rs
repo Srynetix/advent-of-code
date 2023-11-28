@@ -1,6 +1,7 @@
 //! # --- Day 24: Lobby Layout ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/24>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/24/input>_
 //!
 //! Your raft makes it to the tropical island; it turns out that the small crab was an excellent navigator. You make your way to the resort.
@@ -19,7 +20,7 @@
 //!
 //! Here is a larger example:
 //!
-//! ```
+//! ```text
 //! sesenwnenenewseeswwswswwnenewsewsw
 //! neeenesenwnwwswnenewnwwsewnenwseswesw
 //! seswneswswsenwwnwse
@@ -60,7 +61,7 @@
 //!
 //! In the above example, the number of black tiles that are facing up after the given number of days has passed is as follows:
 //!
-//! ```
+//! ```text
 //! Day 1: 15
 //! Day 2: 12
 //! Day 3: 25

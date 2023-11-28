@@ -1,6 +1,9 @@
 //! Part 1
 
-use super::{common::{BagSystem, INPUT_COLOR_NAME, BagColor}, INPUT};
+use super::{
+    common::{BagColor, BagSystem, INPUT_COLOR_NAME},
+    INPUT,
+};
 
 pub fn run() -> usize {
     let system = BagSystem::new_from_rules(INPUT);

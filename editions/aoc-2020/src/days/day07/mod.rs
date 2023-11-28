@@ -1,6 +1,7 @@
 //! # --- Day 7: Handy Haversacks ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/7>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/7/input>_
 //!
 //! You land at the regional airport in time for your next flight. In fact, it looks like you'll even have time to grab some food: all flights are currently delayed due to <em>issues in luggage processing</em>.
@@ -9,7 +10,7 @@
 //!
 //! For example, consider the following rules:
 //!
-//! ```
+//! ```text
 //! light red bags contain 1 bright white bag, 2 muted yellow bags.
 //! dark orange bags contain 3 bright white bags, 4 muted yellow bags.
 //! bright white bags contain 1 shiny gold bag.
@@ -55,7 +56,7 @@
 //!
 //! Here's another example:
 //!
-//! ```
+//! ```text
 //! shiny gold bags contain 2 dark red bags.
 //! dark red bags contain 2 dark orange bags.
 //! dark orange bags contain 2 dark yellow bags.

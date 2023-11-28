@@ -1,6 +1,9 @@
 //! Part 1
 
-use crate::days::day25::{common::{parse_keys, determine_loop_size, transform_subject_number_loop}, INPUT};
+use crate::days::day25::{
+    common::{determine_loop_size, parse_keys, transform_subject_number_loop},
+    INPUT,
+};
 
 pub fn run() -> usize {
     let (card_key, door_key) = parse_keys(INPUT);

@@ -1,6 +1,7 @@
 //! # --- Day 23: Crab Cups ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/23>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/23/input>_
 //!
 //! The small crab challenges <em>you</em> to a game! The crab is going to mix up some cups, and you have to predict where they'll end up.
@@ -19,7 +20,7 @@
 //!
 //! For example, suppose your cup labeling were <code>389125467</code>. If the crab were to do merely 10 moves, the following changes would occur:
 //!
-//! ```
+//! ```text
 //! -- move 1 --
 //! cups: (3) 8  9  1  2  5  4  6  7
 //! pick up: 8, 9, 1

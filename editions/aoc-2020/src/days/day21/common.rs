@@ -146,7 +146,7 @@ pub fn extract_ingredients_without_allergens<'a>(
     map: AllergenMap<'a>,
 ) -> Vec<&'a Ingredient> {
     let mut output = vec![];
-    let ingrediens_with_allergens = map.into_iter().map(|(_, v)| v).collect::<HashSet<_>>();
+    let ingrediens_with_allergens = map.into_values().collect::<HashSet<_>>();
 
     for d in dishes {
         for i in &d.ingredients {

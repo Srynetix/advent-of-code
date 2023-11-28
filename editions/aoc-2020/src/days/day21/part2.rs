@@ -1,6 +1,12 @@
 //! Part 2
 
-use super::{common::{parse_dishes, count_ingredients_for_allergens, resolve_allergen_map, get_canonical_dangerous_list_as_string}, INPUT};
+use super::{
+    common::{
+        count_ingredients_for_allergens, get_canonical_dangerous_list_as_string, parse_dishes,
+        resolve_allergen_map,
+    },
+    INPUT,
+};
 
 pub fn run() -> String {
     let dishes = parse_dishes(INPUT);
@@ -13,6 +19,9 @@ pub fn run() -> String {
 mod tests {
     #[test]
     fn run() {
-        assert_eq!(super::run(), "fsr,skrxt,lqbcg,mgbv,dvjrrkv,ndnlm,xcljh,zbhp");
+        assert_eq!(
+            super::run(),
+            "fsr,skrxt,lqbcg,mgbv,dvjrrkv,ndnlm,xcljh,zbhp"
+        );
     }
 }

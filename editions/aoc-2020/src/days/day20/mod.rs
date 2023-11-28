@@ -1,6 +1,7 @@
 //! # --- Day 20: Jurassic Jigsaw ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/20>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/20/input>_
 //!
 //! The high-speed train leaves the forest and quickly carries you south. You can even see a desert in the distance! Since you have some spare time, you <span title="Just in case. Maybe they missed something.">might as well</span> see if there was anything interesting in the image the Mythical Information Bureau satellite captured.
@@ -15,7 +16,7 @@
 //!
 //! For example, suppose you have the following nine tiles:
 //!
-//! ```
+//! ```text
 //! Tile 2311:
 //! ..##.#..#.
 //! ##..#.....
@@ -127,7 +128,7 @@
 //!
 //! By rotating, flipping, and rearranging them, you can find a square arrangement that causes all adjacent borders to line up:
 //!
-//! ```
+//! ```text
 //! #...##.#.. ..###..### #.#.#####.
 //! ..#.#..#.# ###...#.#. .#..######
 //! .###....#. ..#....#.. ..#.......
@@ -164,7 +165,7 @@
 //!
 //! For reference, the IDs of the above tiles are:
 //!
-//! ```
+//! ```text
 //! 1951    2311    3079
 //! 2729    1427    2473
 //! 2971    1489    1171
@@ -182,7 +183,7 @@
 //!
 //! In the example above, the tiles become:
 //!
-//! ```
+//! ```text
 //! .#.#..#. ##...#.# #..#####
 //! ###....# .#....#. .#......
 //! ##.##.## #.#.#..# #####...
@@ -213,7 +214,7 @@
 //!
 //! Remove the gaps to form the actual image:
 //!
-//! ```
+//! ```text
 //! .#.#..#.##...#.##..#####
 //! ###....#.#....#..#......
 //! ##.##.###.#.#..######...
@@ -242,15 +243,15 @@
 //!
 //! Now, you're ready to search for sea monsters! Because your image is monochrome, a sea monster will look like this:
 //!
-//! ```
+//! ```text
 //!                   #
 //! #    ##    ##    ###
-//!  #  #  #  #  #  #
+//!  #  #  #  #  #  #   
 //! ```
 //!
 //! When looking for this pattern in the image, <em>the spaces can be anything</em>; only the <code>#</code> need to match. Also, you might need to rotate or flip your image before it's oriented correctly to find sea monsters. In the above image, <em>after flipping and rotating it</em> to the appropriate orientation, there are <em>two</em> sea monsters (marked with <code><em>O</em></code>):
 //!
-//! ```
+//! ```text
 //! .####...#####..#...###..
 //! #####..#..#.#.####..#.#.
 //! .#.#...#.###...#.##.O#..

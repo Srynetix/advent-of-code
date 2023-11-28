@@ -1,6 +1,7 @@
 //! # --- Day 19: Monster Messages ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/19>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/19/input>_
 //!
 //! You land in an airport surrounded by dense forest. As you walk to your high-speed train, the Elves at the <span title="This is a purely fictional organization. Any resemblance to actual organizations, past or present, is purely coincidental.">Mythical Information Bureau</span> contact you again. They think their satellite has collected an image of a <em>sea monster</em>! Unfortunately, the connection to the satellite is having problems, and many of the messages sent back from the satellite have been corrupted.
@@ -9,7 +10,7 @@
 //!
 //! The <em>rules for valid messages</em> (the top part of your puzzle input) are numbered and build upon each other. For example:
 //!
-//! ```
+//! ```text
 //! 0: 1 2
 //! 1: "a"
 //! 2: 1 3 | 3 1
@@ -26,7 +27,7 @@
 //!
 //! Here's a more interesting example:
 //!
-//! ```
+//! ```text
 //! 0: 4 1 5
 //! 1: 2 3 | 3 2
 //! 2: 4 4 | 5 5
@@ -43,7 +44,7 @@
 //!
 //! The <em>received messages</em> (the bottom part of your puzzle input) need to be checked against the rules so you can determine which are valid and which are corrupted. Including the rules and the messages together, this might look like:
 //!
-//! ```
+//! ```text
 //! 0: 4 1 5
 //! 1: 2 3 | 3 2
 //! 2: 4 4 | 5 5
@@ -66,7 +67,7 @@
 //!
 //! As you look over the list of messages, you realize your matching rules aren't quite right. To fix them, completely replace rules <code>8: 42</code> and <code>11: 42 31</code> with the following:
 //!
-//! ```
+//! ```text
 //! 8: 42 | 42 8
 //! 11: 42 31 | 42 11 31
 //! ```
@@ -75,11 +76,11 @@
 //!
 //! Fortunately, many of the rules are unaffected by this change; it might help to start by looking at which rules always match the same set of values and how <em>those</em> rules (especially rules <code>42</code> and <code>31</code>) are used by the new versions of rules <code>8</code> and <code>11</code>.
 //!
-//! (Remember, <em>you only need to handle the rules you have</em>; building a solution that could handle any hypothetical combination of rules would be <a href="https://en.wikipedia.org/wiki/Formal_grammar" target="_blank">significantly more difficult</a>.)
+//! (Remember, <em>you only need to handle the rules you have</em>; building a solution that could handle any hypothetical combination of rules would be <a target="_blank" href="https://en.wikipedia.org/wiki/Formal_grammar">significantly more difficult</a>.)
 //!
 //! For example:
 //!
-//! ```
+//! ```text
 //! 42: 9 14 | 10 1
 //! 9: 14 27 | 1 26
 //! 10: 23 14 | 28 1

@@ -1,9 +1,10 @@
 //! # --- Day 2: Password Philosophy ---
 //!
-//! > _Exercise page: <https://adventofcode.com/2020/day/2>_  
+//! > _Exercise page: <https://adventofcode.com/2020/day/2>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/2/input>_
 //!
-//! Your flight departs in a few days from the coastal airport; the easiest way down to the coast from here is via <a href="https://en.wikipedia.org/wiki/Toboggan" target="_blank">toboggan</a>.
+//! Your flight departs in a few days from the coastal airport; the easiest way down to the coast from here is via <a target="_blank" href="https://en.wikipedia.org/wiki/Toboggan">toboggan</a>.
 //!
 //! The shopkeeper at the North Pole Toboggan Rental Shop is having a bad day. "Something's wrong with our computers; we can't log in!" You ask if you can take a look.
 //!
@@ -13,7 +14,7 @@
 //!
 //! For example, suppose you have the following list:
 //!
-//! ```
+//! ```text
 //! 1-3 a: abcde
 //! 1-3 b: cdefg
 //! 2-9 c: ccccccccc

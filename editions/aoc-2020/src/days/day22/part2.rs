@@ -1,6 +1,9 @@
 //! Part 2
 
-use super::{common::{parse_decks, Player, calculate_score, GameMemory, run_recursive_game}, INPUT};
+use super::{
+    common::{calculate_score, parse_decks, run_recursive_game, GameMemory, Player},
+    INPUT,
+};
 
 pub fn run() -> usize {
     let ((_, mut deck1), (_, mut deck2)) = parse_decks(INPUT);

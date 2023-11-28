@@ -1,6 +1,7 @@
 //! # --- Day 21: Allergen Assessment ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/21>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/21/input>_
 //!
 //! You reach the train's last stop and the closest you can get to your vacation island without getting wet. There aren't even any boats here, but nothing can stop you now: you build a raft. You just need a few days' worth of food for your journey.
@@ -13,7 +14,7 @@
 //!
 //! For example, consider the following list of foods:
 //!
-//! ```
+//! ```text
 //! mxmxvkd kfcds sqjhc nhms (contains dairy, fish)
 //! trh fvjkl sbzzf mxmxvkd (contains dairy)
 //! sqjhc fvjkl (contains soy)

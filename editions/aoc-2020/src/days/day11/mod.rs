@@ -1,6 +1,7 @@
 //! # --- Day 11: Seating System ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/11>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/11/input>_
 //!
 //! Your plane lands with plenty of time to spare. The final leg of your journey is a ferry that goes directly to the tropical island where you can finally start your vacation. As you reach the waiting area to board the ferry, you realize you're so early, nobody else has even arrived yet!
@@ -9,7 +10,7 @@
 //!
 //! The seat layout fits neatly on a grid. Each position is either floor (<code>.</code>), an empty seat (<code>L</code>), or an occupied seat (<code>#</code>). For example, the initial seat layout might look like this:
 //!
-//! ```
+//! ```text
 //! L.LL.LL.LL
 //! LLLLLLL.LL
 //! L.L.L..L..
@@ -33,7 +34,7 @@
 //!
 //! After one round of these rules, every seat in the example layout becomes occupied:
 //!
-//! ```
+//! ```text
 //! #.##.##.##
 //! #######.##
 //! #.#.#..#..
@@ -48,7 +49,7 @@
 //!
 //! After a second round, the seats with four or more occupied adjacent seats become empty again:
 //!
-//! ```
+//! ```text
 //! #.LL.L#.##
 //! #LLLLLL.L#
 //! L.L.L..L..
@@ -63,7 +64,7 @@
 //!
 //! This process continues for three more rounds:
 //!
-//! ```
+//! ```text
 //! #.##.L#.##
 //! #L###LL.L#
 //! L.#.#..#..
@@ -76,7 +77,7 @@
 //! #.#L###.##
 //! ```
 //!
-//! ```
+//! ```text
 //! #.#L.L#.##
 //! #LLL#LL.L#
 //! L.L.L..#..
@@ -89,7 +90,7 @@
 //! #.#L#L#.##
 //! ```
 //!
-//! ```
+//! ```text
 //! #.#L.L#.##
 //! #LLL#LL.L#
 //! L.#.L..#..
@@ -112,7 +113,7 @@
 //!
 //! Now, instead of considering just the eight immediately adjacent seats, consider the <em>first seat</em> in each of those eight directions. For example, the empty seat below would see <em>eight</em> occupied seats:
 //!
-//! ```
+//! ```text
 //! .......#.
 //! ...#.....
 //! .#.......
@@ -126,7 +127,7 @@
 //!
 //! The leftmost empty seat below would only see <em>one</em> empty seat, but cannot see any of the occupied ones:
 //!
-//! ```
+//! ```text
 //! .............
 //! .L.L.#.#.#.#.
 //! .............
@@ -134,7 +135,7 @@
 //!
 //! The empty seat below would see <em>no</em> occupied seats:
 //!
-//! ```
+//! ```text
 //! .##.##.
 //! #.#.#.#
 //! ##...##
@@ -148,7 +149,7 @@
 //!
 //! Given the same starting layout as above, these new rules cause the seating area to shift around as follows:
 //!
-//! ```
+//! ```text
 //! L.LL.LL.LL
 //! LLLLLLL.LL
 //! L.L.L..L..
@@ -161,7 +162,7 @@
 //! L.LLLLL.LL
 //! ```
 //!
-//! ```
+//! ```text
 //! #.##.##.##
 //! #######.##
 //! #.#.#..#..
@@ -174,7 +175,7 @@
 //! #.#####.##
 //! ```
 //!
-//! ```
+//! ```text
 //! #.LL.LL.L#
 //! #LLLLLL.LL
 //! L.L.L..L..
@@ -187,7 +188,7 @@
 //! #.LLLLL.L#
 //! ```
 //!
-//! ```
+//! ```text
 //! #.L#.##.L#
 //! #L#####.LL
 //! L.#.#..#..
@@ -200,7 +201,7 @@
 //! #.L####.L#
 //! ```
 //!
-//! ```
+//! ```text
 //! #.L#.L#.L#
 //! #LLLLLL.LL
 //! L.L.L..#..
@@ -213,7 +214,7 @@
 //! #.L#LL#.L#
 //! ```
 //!
-//! ```
+//! ```text
 //! #.L#.L#.L#
 //! #LLLLLL.LL
 //! L.L.L..#..
@@ -226,7 +227,7 @@
 //! #.L#LL#.L#
 //! ```
 //!
-//! ```
+//! ```text
 //! #.L#.L#.L#
 //! #LLLLLL.LL
 //! L.L.L..#..

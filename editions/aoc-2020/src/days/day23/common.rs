@@ -46,13 +46,13 @@ impl Cups {
 
     /// Join cups to string, starting from cup one (and ignoring it).
     pub fn to_string_from_one(&self) -> String {
-        cups_to_string(&self, 1)[1..].to_string()
+        cups_to_string(self, 1)[1..].to_string()
     }
 }
 
 impl ToString for Cups {
     fn to_string(&self) -> String {
-        cups_to_string(&self, self.head)
+        cups_to_string(self, self.head)
     }
 }
 

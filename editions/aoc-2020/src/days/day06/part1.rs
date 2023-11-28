@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{INPUT, common::count_unique_questions_for_anyone};
+use super::{common::count_unique_questions_for_anyone, INPUT};
 
 pub fn run() -> usize {
     INPUT

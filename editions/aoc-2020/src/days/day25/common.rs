@@ -18,9 +18,7 @@ pub fn transform_subject_number_iteration(i: usize, subject: usize) -> usize {
 }
 
 pub fn transform_subject_number_loop(subject: usize, loop_size: usize) -> usize {
-    (0..loop_size)
-        .into_iter()
-        .fold(1, |acc, _| transform_subject_number_iteration(acc, subject))
+    (0..loop_size).fold(1, |acc, _| transform_subject_number_iteration(acc, subject))
 }
 
 pub fn determine_loop_size(public_key: PublicKey) -> usize {

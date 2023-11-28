@@ -1,6 +1,7 @@
 //! # --- Day 18: Operation Order ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/18>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/18/input>_
 //!
 //! As you look out the window and notice a heavily-forested continent slowly appear over the horizon, you are interrupted by the child sitting next to you. They're curious if you could help them with their <span title="Or &quot;maths&quot;, if you have more than one.">math</span> homework.
@@ -13,7 +14,7 @@
 //!
 //! For example, the steps to evaluate the expression <code>1 + 2 * 3 + 4 * 5 + 6</code> are as follows:
 //!
-//! ```
+//! ```text
 //! 1 + 2 * 3 + 4 * 5 + 6
 //!   3   * 3 + 4 * 5 + 6
 //!       9   + 4 * 5 + 6
@@ -24,7 +25,7 @@
 //!
 //! Parentheses can override this order; for example, here is what happens if parentheses are added to form <code>1 + (2 * 3) + (4 * (5 + 6))</code>:
 //!
-//! ```
+//! ```text
 //! 1 + (2 * 3) + (4 * (5 + 6))
 //! 1 +    6    + (4 * (5 + 6))
 //!      7      + (4 * (5 + 6))
@@ -51,7 +52,7 @@
 //!
 //! For example, the steps to evaluate the expression <code>1 + 2 * 3 + 4 * 5 + 6</code> are now as follows:
 //!
-//! ```
+//! ```text
 //! 1 + 2 * 3 + 4 * 5 + 6
 //!   3   * 3 + 4 * 5 + 6
 //!   3   *   7   * 5 + 6

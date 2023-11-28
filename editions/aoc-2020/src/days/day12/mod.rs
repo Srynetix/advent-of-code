@@ -1,11 +1,12 @@
 //! # --- Day 12: Rain Risk ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/12>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/12/input>_
 //!
 //! Your ferry made decent progress toward the island, but the storm came in <span title="At least it wasn't a Category Six!">faster than anyone expected</span>. The ferry needs to take <em>evasive actions</em>!
 //!
-//! Unfortunately, the ship's navigation computer seems to be malfunctioning; rather than giving a route directly to safety, it produced extremely circuitous instructions. When the captain uses the <a target="_blank" href="https://en.wikipedia.org/wiki/Public_address_system">PA system</a> to ask if anyone can help, you quickly volunteer.
+//! Unfortunately, the ship's navigation computer seems to be malfunctioning; rather than giving a route directly to safety, it produced extremely circuitous instructions. When the captain uses the <a href="https://en.wikipedia.org/wiki/Public_address_system" target="_blank">PA system</a> to ask if anyone can help, you quickly volunteer.
 //!
 //! The navigation instructions (your puzzle input) consists of a sequence of single-character <em>actions</em> paired with integer input <em>values</em>. After staring at them for a few minutes, you work out what they probably mean:
 //!
@@ -22,7 +23,7 @@
 //!
 //! For example:
 //!
-//! ```
+//! ```text
 //! F10
 //! N3
 //! F7

@@ -1,6 +1,9 @@
 //! Part 2
 
-use super::{common::{StepOutput, Interpreter}, INPUT};
+use super::{
+    common::{Interpreter, StepOutput},
+    INPUT,
+};
 
 pub fn run() -> usize {
     if let StepOutput::Finished(e) = Interpreter::new_from_code(INPUT).run_repair_mode() {

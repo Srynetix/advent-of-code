@@ -1,6 +1,6 @@
 //! Common
 
-use std::collections::{VecDeque, HashSet, HashMap};
+use std::collections::{HashMap, HashSet, VecDeque};
 
 use aoc_sx::itertools::Itertools;
 

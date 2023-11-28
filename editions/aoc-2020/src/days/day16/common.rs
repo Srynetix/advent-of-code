@@ -60,7 +60,7 @@ impl From<&str> for TicketRule {
                     .map(|x| x.parse::<usize>().unwrap())
                     .collect();
 
-                let first = vec.get(0).copied().unwrap();
+                let first = vec.first().copied().unwrap();
                 let second = vec.get(1).copied().unwrap();
 
                 RangeInclusive::new(first, second)
@@ -224,7 +224,7 @@ impl InputParser {
 impl From<&str> for InputParser {
     fn from(value: &str) -> Self {
         let groups: Vec<&str> = value.trim().split("\n\n").collect();
-        let rules_section = groups.get(0).cloned().unwrap();
+        let rules_section = groups.first().cloned().unwrap();
         let your_ticket_section = groups.get(1).cloned().unwrap();
         let nearby_tickets_section = groups.get(2).cloned().unwrap();
 

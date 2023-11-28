@@ -1,7 +1,7 @@
 use scraper::{ElementRef, Html, Selector};
 use url::Url;
 
-#[derive(Debug)]
+#[derive(Debug, Default)]
 pub struct MarkdownContent(String);
 
 #[derive(Debug)]
@@ -32,7 +32,7 @@ impl DayPageParser {
         md.insert_at_line(
             2,
             MarkdownContent(format!(
-                "> _Exercise page: <{}>_  \n> _Input page: <{}>_\n",
+                "> _Exercise page: <{}>_\n\n> _Input page: <{}>_\n",
                 self.page_url, self.input_url
             )),
         );

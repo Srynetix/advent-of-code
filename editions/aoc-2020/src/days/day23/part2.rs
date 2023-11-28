@@ -1,6 +1,9 @@
 //! Part 2
 
-use super::{common::{run_steps, prepare_million_cups}, INPUT};
+use super::{
+    common::{prepare_million_cups, run_steps},
+    INPUT,
+};
 
 pub fn run() -> usize {
     let mut cups = prepare_million_cups(INPUT);

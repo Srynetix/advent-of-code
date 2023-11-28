@@ -63,7 +63,7 @@ struct SendAnswer {
 fn main() -> Result<()> {
     color_eyre::install()?;
 
-    if let Err(_) = dotenv() {
+    if dotenv().is_err() {
         println!("Env file not found, skipping.")
     }
 

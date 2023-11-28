@@ -1,6 +1,7 @@
 //! # --- Day 9: Encoding Error ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/9>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/9/input>_
 //!
 //! With your neighbor happily enjoying their video game, you turn your attention to an open data port on the little screen in the seat in front of you.
@@ -28,7 +29,7 @@
 //!
 //! Here is a larger example which only considers the previous <em>5</em> numbers (and has a preamble of length 5):
 //!
-//! ```
+//! ```text
 //! 35
 //! 20
 //! 15
@@ -61,7 +62,7 @@
 //!
 //! Again consider the above example:
 //!
-//! ```
+//! ```text
 //! 35
 //! 20
 //! 15

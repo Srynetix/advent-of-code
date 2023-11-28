@@ -91,8 +91,7 @@ impl RuleParser {
     fn try_parse_either(rule_components: &str) -> Result<RuleType, DayError> {
         let pipe_components = rule_components.split('|').collect::<Vec<_>>();
         if pipe_components.len() > 1 {
-            let a = Self::extract_rule_ids(pipe_components.get(0).unwrap().split_whitespace());
-
+            let a = Self::extract_rule_ids(pipe_components.first().unwrap().split_whitespace());
             let b = Self::extract_rule_ids(pipe_components.get(1).unwrap().split_whitespace());
 
             Ok(RuleType::Either(a, b))
@@ -123,7 +122,7 @@ impl RuleParser {
 
     fn try_parse_char(rule_components: &str) -> Result<RuleType, DayError> {
         // Remove quotes
-        let rule_components = rule_components.replace("\"", "");
+        let rule_components = rule_components.replace('\"', "");
         let char_component = rule_components.chars().next().ok_or_else(|| {
             DayError::ParseError(format!(
                 "Could not parse char from Char rule: {}",

@@ -1,13 +1,14 @@
 //! # --- Day 3: Toboggan Trajectory ---
 //!
-//! > _Exercise page: <https://adventofcode.com/2020/day/3>_  
+//! > _Exercise page: <https://adventofcode.com/2020/day/3>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/3/input>_
 //!
 //! With the toboggan login problems resolved, you set off toward the airport. While travel by toboggan might be easy, it's certainly not safe: there's <span title="It looks like the toboggan steering system even runs on Intcode! Good thing you don't have to modify it.">very minimal steering</span> and the area is covered in trees. You'll need to see which angles will take you near the fewest trees.
 //!
 //! Due to the local geology, trees in this area only grow on exact integer coordinates in a grid. You make a map (your puzzle input) of the open squares (<code>.</code>) and trees (<code>#</code>) you can see. For example:
 //!
-//! ```
+//! ```text
 //! ..##.......
 //! #...#...#..
 //! .#....#..#.
@@ -23,7 +24,7 @@
 //!
 //! These aren't the only trees, though; due to something you read about once involving arboreal genetics and biome stability, the same pattern repeats to the right many times:
 //!
-//! ```
+//! ```text
 //! ..##.........##.........##.........##.........##.........##.......  --->
 //! #...#...#..#...#...#..#...#...#..#...#...#..#...#...#..#...#...#..
 //! .#....#..#..#....#..#..#....#..#..#....#..#..#....#..#..#....#..#.
@@ -45,7 +46,7 @@
 //!
 //! The locations you'd check in the above example are marked here with <code><em>O</em></code> where there was an open square and <code><em>X</em></code> where there was a tree:
 //!
-//! ```
+//! ```text
 //! ..##.........##.........##.........##.........##.........##.......  --->
 //! #..O#...#..#...#...#..#...#...#..#...#...#..#...#...#..#...#...#..
 //! .#....X..#..#....#..#..#....#..#..#....#..#..#....#..#..#....#..#.

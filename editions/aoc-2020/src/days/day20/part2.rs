@@ -1,6 +1,9 @@
 //! Part 2
 
-use super::{common::{TileParser, TileMatcher}, INPUT};
+use super::{
+    common::{TileMatcher, TileParser},
+    INPUT,
+};
 
 pub fn run() -> usize {
     let tiles = TileParser::parse_multiple_from_input(INPUT);

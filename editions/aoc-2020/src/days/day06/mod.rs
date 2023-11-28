@@ -1,15 +1,16 @@
 //! # --- Day 6: Custom Customs ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/6>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/6/input>_
 //!
-//! As your flight approaches the regional airport where you'll switch to a much larger plane, <a target="_blank" href="https://en.wikipedia.org/wiki/Customs_declaration">customs declaration forms</a> are distributed to the passengers.
+//! As your flight approaches the regional airport where you'll switch to a much larger plane, <a href="https://en.wikipedia.org/wiki/Customs_declaration" target="_blank">customs declaration forms</a> are distributed to the passengers.
 //!
 //! The form asks a series of 26 yes-or-no questions marked <code>a</code> through <code>z</code>. All you need to do is identify the questions for which <em>anyone in your group</em> answers "yes". Since your group is just you, this doesn't take very long.
 //!
 //! However, the person sitting next to you seems to be experiencing a language barrier and asks if you can help. For each of the people in their group, you write down the questions for which they answer "yes", one per line.  For example:
 //!
-//! ```
+//! ```text
 //! abcx
 //! abcy
 //! abcz
@@ -19,7 +20,7 @@
 //!
 //! Another group asks for your help, then another, and eventually you've collected answers from every group on the plane (your puzzle input). Each group's answers are separated by a blank line, and within each group, each person's answers are on a single line. For example:
 //!
-//! ```
+//! ```text
 //! abc
 //!
 //! a
@@ -58,7 +59,7 @@
 //!
 //! Using the same  example as above:
 //!
-//! ```
+//! ```text
 //! abc
 //!
 //! a

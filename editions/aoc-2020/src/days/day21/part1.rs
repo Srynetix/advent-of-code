@@ -1,6 +1,12 @@
 //! Part 1
 
-use super::{common::{parse_dishes, count_ingredients_for_allergens, resolve_allergen_map, extract_ingredients_without_allergens}, INPUT};
+use super::{
+    common::{
+        count_ingredients_for_allergens, extract_ingredients_without_allergens, parse_dishes,
+        resolve_allergen_map,
+    },
+    INPUT,
+};
 
 pub fn run() -> usize {
     let dishes = parse_dishes(INPUT);

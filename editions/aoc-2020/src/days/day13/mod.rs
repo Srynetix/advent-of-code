@@ -1,6 +1,7 @@
 //! # --- Day 13: Shuttle Search ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/13>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/13/input>_
 //!
 //! Your ferry can make it safely to a nearby port, but it won't get much further. When you call to book another ship, you discover that no ships embark from that port to your vacation island. You'll need to get from the port to the nearest airport.
@@ -17,14 +18,14 @@
 //!
 //! For example, suppose you have the following notes:
 //!
-//! ```
+//! ```text
 //! 939
 //! 7,13,x,x,59,x,31,19
 //! ```
 //!
 //! Here, the earliest timestamp you could depart is <code>939</code>, and the bus IDs in service are <code>7</code>, <code>13</code>, <code>59</code>, <code>31</code>, and <code>19</code>. Near timestamp <code>939</code>, these bus IDs depart at the times marked <code>D</code>:
 //!
-//! ```
+//! ```text
 //! time   bus 7   bus 13  bus 59  bus 31  bus 19
 //! 929      .       .       .       .       .
 //! 930      .       .       .       D       .
@@ -59,7 +60,7 @@
 //!
 //! For example, suppose you have the same list of bus IDs as above:
 //!
-//! ```
+//! ```text
 //! 7,13,x,x,59,x,31,19```
 //!
 //! An <code>x</code> in the schedule means there are no constraints on what bus IDs must depart at that time.
@@ -80,7 +81,7 @@
 //!
 //! In this example, the earliest timestamp at which this occurs is <em><code>1068781</code></em>:
 //!
-//! ```
+//! ```text
 //! time     bus 7   bus 13  bus 59  bus 31  bus 19
 //! 1068773    .       .       .       .       .
 //! 1068774    D       .       .       .       .

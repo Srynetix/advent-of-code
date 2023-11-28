@@ -28,7 +28,7 @@ impl TryFrom<u16> for ExerciseYear {
     type Error = Error;
 
     fn try_from(value: u16) -> Result<Self, Self::Error> {
-        if value < MIN_YEAR || value > MAX_YEAR {
+        if !(MIN_YEAR..=MAX_YEAR).contains(&value) {
             Err(Error::InvalidYear(value))
         } else {
             Ok(Self(value))

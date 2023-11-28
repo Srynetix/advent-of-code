@@ -1,6 +1,7 @@
 //! # --- Day 10: Adapter Array ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/10>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/10/input>_
 //!
 //! Patched into the aircraft's data port, you discover weather forecasts of a massive tropical storm. Before you can figure out whether it will impact your vacation plans, however, your device suddenly turns off!
@@ -21,7 +22,7 @@
 //!
 //! For example, suppose that in your bag, you have adapters with the following joltage ratings:
 //!
-//! ```
+//! ```text
 //! 16
 //! 10
 //! 15
@@ -53,7 +54,7 @@
 //!
 //! Here is a larger example:
 //!
-//! ```
+//! ```text
 //! 28
 //! 33
 //! 18
@@ -97,7 +98,7 @@
 //!
 //! The first example above (the one that starts with <code>16</code>, <code>10</code>, <code>15</code>) supports the following arrangements:
 //!
-//! ```
+//! ```text
 //! (0), 1, 4, 5, 6, 7, 10, 11, 12, 15, 16, 19, (22)
 //! (0), 1, 4, 5, 6, 7, 10, 12, 15, 16, 19, (22)
 //! (0), 1, 4, 5, 7, 10, 11, 12, 15, 16, 19, (22)
@@ -112,7 +113,7 @@
 //!
 //! The second example above (the one that starts with <code>28</code>, <code>33</code>, <code>18</code>) has many arrangements. Here are a few:
 //!
-//! ```
+//! ```text
 //! (0), 1, 2, 3, 4, 7, 8, 9, 10, 11, 14, 17, 18, 19, 20, 23, 24, 25, 28, 31,
 //! 32, 33, 34, 35, 38, 39, 42, 45, 46, 47, 48, 49, (52)
 //!

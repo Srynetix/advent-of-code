@@ -1,6 +1,9 @@
 //! Part 2
 
-use super::{common::{extract_schedules, Scheduler}, INPUT};
+use super::{
+    common::{extract_schedules, Scheduler},
+    INPUT,
+};
 
 pub fn run() -> usize {
     let (_, schedule) = extract_schedules(INPUT);

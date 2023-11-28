@@ -1,6 +1,9 @@
 //! Part 1
 
-use super::{common::{StepOutput, Interpreter}, INPUT};
+use super::{
+    common::{Interpreter, StepOutput},
+    INPUT,
+};
 
 pub fn run() -> usize {
     if let StepOutput::LoopFound(e) = Interpreter::new_from_code(INPUT).run() {

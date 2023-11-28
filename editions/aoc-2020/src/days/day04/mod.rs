@@ -1,6 +1,7 @@
 //! # --- Day 4: Passport Processing ---
 //!
-//! > _Exercise page: <https://adventofcode.com/2020/day/4>_  
+//! > _Exercise page: <https://adventofcode.com/2020/day/4>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/4/input>_
 //!
 //! You arrive at the airport only to realize that you grabbed your North Pole Credentials instead of your passport. While these documents are extremely similar, North Pole Credentials aren't issued by a country and therefore aren't actually valid documentation for travel in most of the world.
@@ -25,7 +26,7 @@
 //!
 //! Here is an example batch file containing four passports:
 //!
-//! ```
+//! ```text
 //! ecl:gry pid:860033327 eyr:2020 hcl:#fffffd
 //! byr:1937 iyr:2017 cid:147 hgt:183cm
 //!
@@ -74,7 +75,7 @@
 //!
 //! Your job is to count the passports where all required fields are both <em>present</em> and <em>valid</em> according to the above rules. Here are some example values:
 //!
-//! ```
+//! ```text
 //! byr valid:   2002
 //! byr invalid: 2003
 //!
@@ -96,7 +97,7 @@
 //!
 //! Here are some invalid passports:
 //!
-//! ```
+//! ```text
 //! eyr:1972 cid:100
 //! hcl:#18171d ecl:amb hgt:170 pid:186cm iyr:2018 byr:1926
 //!
@@ -114,7 +115,7 @@
 //!
 //! Here are some valid passports:
 //!
-//! ```
+//! ```text
 //! pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980
 //! hcl:#623a2f
 //!

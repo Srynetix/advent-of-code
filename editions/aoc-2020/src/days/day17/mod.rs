@@ -1,6 +1,7 @@
 //! # --- Day 17: Conway Cubes ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/17>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/17/input>_
 //!
 //! As your flight slowly drifts through the sky, the Elves at the Mythical Information Bureau at the North Pole contact you. They'd like some help debugging a malfunctioning experimental energy source aboard one of their super-secret imaging satellites.
@@ -25,7 +26,7 @@
 //!
 //! For example, consider the following initial state:
 //!
-//! ```
+//! ```text
 //! .#.
 //! ..#
 //! ###
@@ -35,7 +36,7 @@
 //!
 //! Simulating a few cycles from this initial state produces the following configurations, where the result of each cycle is shown layer-by-layer at each given <code>z</code> coordinate (and the frame of view follows the active cells in each cycle):
 //!
-//! ```
+//! ```text
 //! Before any cycles:
 //!
 //! z=0
@@ -166,7 +167,7 @@
 //!
 //! Simulating a few cycles from this initial state produces the following configurations, where the result of each cycle is shown layer-by-layer at each given <code>z</code> and <code>w</code> coordinate:
 //!
-//! ```
+//! ```text
 //! Before any cycles:
 //!
 //! z=0, w=0

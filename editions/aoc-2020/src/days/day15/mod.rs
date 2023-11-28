@@ -1,6 +1,7 @@
 //! # --- Day 15: Rambunctious Recitation ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/15>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/15/input>_
 //!
 //! You catch the airport shuttle and try to book a new flight to your vacation island. Due to the storm, all direct flights have been cancelled, but a route is available to get around the storm. You take it.

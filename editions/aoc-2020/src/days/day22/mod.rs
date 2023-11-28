@@ -1,6 +1,7 @@
 //! # --- Day 22: Crab Combat ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/22>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/22/input>_
 //!
 //! It only takes a few hours of sailing the ocean on a raft for boredom to sink in. Fortunately, you brought a small deck of <a href="/2019/day/22">space cards</a>! You'd like to play a game of <em>Combat</em>, and there's even an opponent available: a small crab that climbed aboard your raft before you left.
@@ -11,7 +12,7 @@
 //!
 //! For example, consider the following starting decks:
 //!
-//! ```
+//! ```text
 //! Player 1:
 //! 9
 //! 2
@@ -31,7 +32,7 @@
 //!
 //! The first round begins with both players drawing the top card of their decks: <code>9</code> and <code>5</code>. Player 1 has the higher card, so both cards move to the bottom of player 1's deck such that <code>9</code> is above <code>5</code>. In total, it takes 29 rounds before a player has all of the cards:
 //!
-//! ```
+//! ```text
 //! -- Round 1 --
 //! Player 1's deck: 9, 2, 6, 3, 1
 //! Player 2's deck: 5, 8, 4, 7, 10
@@ -98,7 +99,7 @@
 //!
 //! Once the game ends, you can calculate the winning player's <em>score</em>. The bottom card in their deck is worth the value of the card multiplied by 1, the second-from-the-bottom card is worth the value of the card multiplied by 2, and so on. With 10 cards, the top card is worth the value on the card multiplied by 10. In this example, the winning player's score is:
 //!
-//! ```
+//! ```text
 //!    3 * 10
 //! +  2 *  9
 //! + 10 *  8
@@ -132,7 +133,7 @@
 //!
 //! Here is an example of a small game that would loop forever without the infinite game prevention rule:
 //!
-//! ```
+//! ```text
 //! Player 1:
 //! 43
 //! 19
@@ -149,7 +150,7 @@
 //!
 //! Here is a complete example of gameplay, where <code>Game 1</code> is the primary game of Recursive Combat:
 //!
-//! ```
+//! ```text
 //! === Game 1 ===
 //!
 //! -- Round 1 (Game 1) --

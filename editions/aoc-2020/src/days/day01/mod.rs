@@ -1,6 +1,7 @@
 //! # --- Day 1: Report Repair ---
 //!
-//! > _Exercise page: <https://adventofcode.com/2020/day/1>_  
+//! > _Exercise page: <https://adventofcode.com/2020/day/1>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/1/input>_
 //!
 //! After saving Christmas <a href="/events">five years in a row</a>, you've decided to take a vacation at a nice resort on a tropical island. <span title="WHAT COULD GO WRONG">Surely</span>, Christmas will go on without you.
@@ -17,7 +18,7 @@
 //!
 //! For example, suppose your expense report contained the following:
 //!
-//! ```
+//! ```text
 //! 1721
 //! 979
 //! 366

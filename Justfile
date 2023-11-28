@@ -3,12 +3,20 @@ _default:
 
 # Run a toolkit command
 tk *ARGS:
-    cargo run -p aoc-sx-cli {{ ARGS }}
+    cargo run --release -p aoc-sx-cli {{ ARGS }}
 
 # Run AoC tests
 test YEAR:
-    cargo test -p aoc-{{ YEAR }}
+    cargo test --release -p aoc-{{ YEAR }}
 
 # Run all AoC tests
 test-all:
-    cargo test
+    cargo test --release
+
+# Format code
+fmt:
+    cargo fmt --all
+
+# Run lints
+lint:
+    cargo clippy --all

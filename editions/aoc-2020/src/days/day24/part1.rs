@@ -1,6 +1,9 @@
 //! Part 1
 
-use super::{common::{HexGrid, parse_paths}, INPUT};
+use super::{
+    common::{parse_paths, HexGrid},
+    INPUT,
+};
 
 pub fn run() -> usize {
     let mut grid = HexGrid::default();

@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{INPUT, common::TobogganMap};
+use super::{common::TobogganMap, INPUT};
 
 pub fn run() -> usize {
     let (x, y) = (3, 1);

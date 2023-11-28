@@ -8,7 +8,6 @@ pub fn run() -> usize {
     game.count_active_cells()
 }
 
-
 #[cfg(test)]
 mod tests {
     #[test]

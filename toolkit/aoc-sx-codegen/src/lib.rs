@@ -85,8 +85,10 @@ impl ModuleGenerator {
 
         // Finally, create input.txt
         let input_txt = path.join("input.txt");
-        println!("Creating {input_txt:?} ...");
-        std::fs::write(&input_txt, exercise_page.puzzle_input.as_str())?;
+        if !input_txt.exists() {
+            println!("Creating {input_txt:?} ...");
+            std::fs::write(&input_txt, exercise_page.puzzle_input.as_str())?;
+        }
 
         Ok(())
     }

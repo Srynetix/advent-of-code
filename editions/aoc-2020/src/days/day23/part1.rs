@@ -1,6 +1,9 @@
 //! Part 1
 
-use super::{common::{parse_cups, run_steps}, INPUT};
+use super::{
+    common::{parse_cups, run_steps},
+    INPUT,
+};
 
 pub fn run() -> String {
     let mut cups = parse_cups(INPUT);

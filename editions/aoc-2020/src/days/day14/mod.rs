@@ -1,6 +1,7 @@
 //! # --- Day 14: Docking Data ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/14>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/14/input>_
 //!
 //! As your ferry approaches the sea port, the captain asks for your help again. The computer system that runs this port isn't compatible with the docking program on the ferry, so the docking parameters aren't being correctly initialized in the docking program's memory.
@@ -13,7 +14,7 @@
 //!
 //! For example, consider the following program:
 //!
-//! ```
+//! ```text
 //! mask = XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X
 //! mem[8] = 11
 //! mem[7] = 101
@@ -24,7 +25,7 @@
 //!
 //! The program then attempts to write the value <code>11</code> to memory address <code>8</code>. By expanding everything out to individual bits, the mask is applied as follows:
 //!
-//! ```
+//! ```text
 //! value:  000000000000000000000000000000001011  (decimal 11)
 //! mask:   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X
 //! result: 000000000000000000000000000001001001  (decimal 73)
@@ -32,7 +33,7 @@
 //!
 //! So, because of the mask, the value <code>73</code> is written to memory address <code>8</code> instead. Then, the program tries to write <code>101</code> to address <code>7</code>:
 //!
-//! ```
+//! ```text
 //! value:  000000000000000000000000000001100101  (decimal 101)
 //! mask:   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X
 //! result: 000000000000000000000000000001100101  (decimal 101)
@@ -40,7 +41,7 @@
 //!
 //! This time, the mask has no effect, as the bits it overwrote were already the values the mask tried to set. Finally, the program tries to write <code>0</code> to address <code>8</code>:
 //!
-//! ```
+//! ```text
 //! value:  000000000000000000000000000000000000  (decimal 0)
 //! mask:   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX1XXXX0X
 //! result: 000000000000000000000000000001000000  (decimal 64)
@@ -67,7 +68,7 @@
 //!
 //! For example, consider the following program:
 //!
-//! ```
+//! ```text
 //! mask = 000000000000000000000000000000X1001X
 //! mem[42] = 100
 //! mask = 00000000000000000000000000000000X0XX
@@ -76,7 +77,7 @@
 //!
 //! When this program goes to write to memory address <code>42</code>, it first applies the bitmask:
 //!
-//! ```
+//! ```text
 //! address: 000000000000000000000000000000101010  (decimal 42)
 //! mask:    000000000000000000000000000000X1001X
 //! result:  000000000000000000000000000000X1101X
@@ -84,7 +85,7 @@
 //!
 //! After applying the mask, four bits are overwritten, three of which are different, and two of which are <em>floating</em>. Floating bits take on every possible combination of values; with two floating bits, four actual memory addresses are written:
 //!
-//! ```
+//! ```text
 //! 000000000000000000000000000000011010  (decimal 26)
 //! 000000000000000000000000000000011011  (decimal 27)
 //! 000000000000000000000000000000111010  (decimal 58)
@@ -93,7 +94,7 @@
 //!
 //! Next, the program is about to write to memory address <code>26</code> with a different bitmask:
 //!
-//! ```
+//! ```text
 //! address: 000000000000000000000000000000011010  (decimal 26)
 //! mask:    00000000000000000000000000000000X0XX
 //! result:  00000000000000000000000000000001X0XX
@@ -101,7 +102,7 @@
 //!
 //! This results in an address with three floating bits, causing writes to <em>eight</em> memory addresses:
 //!
-//! ```
+//! ```text
 //! 000000000000000000000000000000010000  (decimal 16)
 //! 000000000000000000000000000000010001  (decimal 17)
 //! 000000000000000000000000000000010010  (decimal 18)

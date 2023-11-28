@@ -107,7 +107,7 @@ fn parse_deck(input: &str) -> (Player, Deck) {
         .trim()
         .strip_prefix("Player ")
         .unwrap()
-        .strip_suffix(":")
+        .strip_suffix(':')
         .unwrap()
         .parse()
         .unwrap();
@@ -259,7 +259,7 @@ pub fn run_recursive_game(
     }
 
     // Prepare rounds for game
-    memory.rounds.entry(game_number).or_insert_with(Vec::new);
+    memory.rounds.entry(game_number).or_default();
 
     loop {
         if let GameStepResult::Finished(player) =

@@ -503,7 +503,7 @@ impl TileMatcher {
             // OK
             if this_border == other_border {
                 break;
-            } else if this_border == TileManipulator::invert_side(&other_border) {
+            } else if this_border == TileManipulator::invert_side(other_border) {
                 match direction {
                     BorderDirection::Left | BorderDirection::Right => {
                         current_tile = current_tile
@@ -618,7 +618,7 @@ impl TileMatcher {
             if y != 0 {
                 // Insert at bottom
                 let last_tile = &output[y - 1][0].as_ref().unwrap();
-                if let Some(tile) = Self::position_tile_at_bottom(&last_tile, &matches, tiles) {
+                if let Some(tile) = Self::position_tile_at_bottom(last_tile, &matches, tiles) {
                     output[y][0] = Some(tile);
                 } else {
                     panic!("Tile not found (bottom) for position (0, {})", y);
@@ -627,7 +627,7 @@ impl TileMatcher {
 
             for x in 1..puzzle_size {
                 let last_tile = &output[y][x - 1].as_ref().unwrap();
-                if let Some(tile) = Self::position_tile_at_right(&last_tile, &matches, tiles) {
+                if let Some(tile) = Self::position_tile_at_right(last_tile, &matches, tiles) {
                     output[y][x] = Some(tile);
                 } else {
                     panic!("Tile not found (right) for position ({}, {})", x, y);
@@ -691,7 +691,7 @@ impl TileMatcher {
                                 replaced_puzzle = Some(Puzzle(puzzle.0.clone()));
                             }
 
-                            Self::replace_monsters(&mut replaced_puzzle.as_mut().unwrap(), x, y);
+                            Self::replace_monsters(replaced_puzzle.as_mut().unwrap(), x, y);
                         }
                     }
                 }
@@ -756,10 +756,7 @@ impl TileParser {
     ///
     /// * `input` - Input string
     pub fn parse_multiple_from_input(input: &str) -> Vec<Tile> {
-        input
-            .split("\n\n")
-            .map(|block| Self::parse_from_input(block))
-            .collect()
+        input.split("\n\n").map(Self::parse_from_input).collect()
     }
 
     /// Parse a tile ID.

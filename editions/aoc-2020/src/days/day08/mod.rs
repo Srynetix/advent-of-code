@@ -1,11 +1,12 @@
 //! # --- Day 8: Handheld Halting ---
 //!
 //! > _Exercise page: <https://adventofcode.com/2020/day/8>_
+//!
 //! > _Input page: <https://adventofcode.com/2020/day/8/input>_
 //!
 //! Your flight to the major airline hub reaches cruising altitude without incident.  While you consider checking the in-flight menu for one of those drinks that come with a little umbrella, you are interrupted by the kid sitting next to you.
 //!
-//! Their <a href="https://en.wikipedia.org/wiki/Handheld_game_console" target="_blank">handheld game console</a> won't turn on! They ask if you can take a look.
+//! Their <a target="_blank" href="https://en.wikipedia.org/wiki/Handheld_game_console">handheld game console</a> won't turn on! They ask if you can take a look.
 //!
 //! You narrow the problem down to a strange <em>infinite loop</em> in the <span title="A trendy new line of encrypted footwear?">boot code</span> (your puzzle input) of the device. You should be able to fix it, but first you need to be able to run the code in isolation.
 //!
@@ -18,7 +19,7 @@
 //!
 //! For example, consider the following program:
 //!
-//! ```
+//! ```text
 //! nop +0
 //! acc +1
 //! jmp +4
@@ -32,7 +33,7 @@
 //!
 //! These instructions are visited in this order:
 //!
-//! ```
+//! ```text
 //! nop +0  | 1
 //! acc +1  | 2, 8(!)
 //! jmp +4  | 3
@@ -62,7 +63,7 @@
 //!
 //! For example, consider the same program from above:
 //!
-//! ```
+//! ```text
 //! nop +0
 //! acc +1
 //! jmp +4
@@ -78,7 +79,7 @@
 //!
 //! However, if you change the second-to-last instruction (from <code>jmp -4</code> to <code>nop -4</code>), the program terminates! The instructions are visited in this order:
 //!
-//! ```
+//! ```text
 //! nop +0  | 1
 //! acc +1  | 2
 //! jmp +4  | 3
