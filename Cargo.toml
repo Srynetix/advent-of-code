@@ -1,0 +1,43 @@
+[workspace]
+members = [
+  "./editions/aoc-2020",
+  "./editions/aoc-2021",
+  "./editions/aoc-2022",
+  "./editions/aoc-2023",
+  "./toolkit/aoc-sx",
+  "./toolkit/aoc-sx-algo",
+  "./toolkit/aoc-sx-cli",
+  "./toolkit/aoc-sx-codegen",
+  "./toolkit/aoc-sx-core",
+  "./toolkit/aoc-sx-ui",
+  "./toolkit/aoc-sx-webclient",
+]
+resolver = "2"
+
+[workspace.dependencies]
+# Image handling
+image = "0.24.7"
+# To create "heredocuments"
+indoc = "2.0.4"
+# Additional iterator methods
+itertools = "0.12.0"
+# Literal hashmaps and hashsets
+maplit = "1.0.2"
+# Lazy static values
+once_cell = "1.18.0"
+# Graph library
+petgraph = "0.6.4"
+# Regular expressions
+regex = "1.10.2"
+# Serialization/deserialization
+serde = { version = "1.0.193", features = ["derive"] }
+# Serde on plain strings
+serde_plain = "1.0.2"
+# Pipelines everywhere!
+tap = "1.0.1"
+# Error creation
+thiserror = "1.0.50"
+# Logs and spans
+tracing = "0.1.40"
+# URL handling
+url = "2.5.0"

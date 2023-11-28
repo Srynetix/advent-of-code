@@ -1,0 +1,19 @@
+[package]
+name = "aoc-sx"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aoc-sx-algo = { path = "../aoc-sx-algo" }
+
+image = { workspace = true }
+indoc = { workspace = true }
+itertools = { workspace = true }
+maplit = { workspace = true }
+once_cell = { workspace = true }
+petgraph = { workspace = true }
+regex = { workspace = true }
+serde_plain = { workspace = true }
+tap = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }

@@ -1,0 +1,21 @@
+[package]
+name = "aoc-sx-cli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.4.8", features = ["derive"] }
+color-eyre = "0.6.2"
+dotenvy = "0.15.7"
+figment = { version = "0.10.12", features = ["env"] }
+tracing-error = "0.2.0"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+tracing-log = "0.2.0"
+tracing-tree = "0.3.0"
+
+aoc-sx-codegen = { path = "../aoc-sx-codegen" }
+aoc-sx-core = { path = "../aoc-sx-core" }
+aoc-sx-webclient = { path = "../aoc-sx-webclient" }
+
+serde = { workspace = true }
+tracing = { workspace = true }

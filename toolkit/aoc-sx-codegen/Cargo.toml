@@ -1,0 +1,15 @@
+[package]
+name = "aoc-sx-codegen"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+aoc-sx-core = { path = "../aoc-sx-core" }
+aoc-sx-webclient = { path = "../aoc-sx-webclient" }
+
+scraper = "0.18.1"
+
+indoc = { workspace = true }
+url = { workspace = true }
