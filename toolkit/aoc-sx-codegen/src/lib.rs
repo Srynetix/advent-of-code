@@ -4,6 +4,7 @@ use std::path::Path;
 
 use aoc_sx_core::exercise::{ExerciseDay, ExerciseYear};
 use aoc_sx_webclient::Client;
+use itertools::Itertools;
 use parser::MarkdownContent;
 
 use crate::parser::DayPageParser;
@@ -27,14 +28,6 @@ impl ModuleGenerator {
     }
 
     /// Generate a Rust module.
-    ///
-    /// Should look like this:
-    /// - ./path/to/module/mod.rs
-    /// - ./path/to/module/part1.rs
-    /// - ./path/to/module/part2.rs
-    /// - ./path/to/module/common.rs
-    /// - ./path/to/module/input.txt
-    ///
     pub fn generate_module<P: AsRef<Path>>(
         &self,
         folder: P,
@@ -90,6 +83,12 @@ impl ModuleGenerator {
             std::fs::write(&input_txt, exercise_page.puzzle_input.as_str())?;
         }
 
+        // Generate root module
+        let root_module = path.parent().unwrap();
+        let lib_rs = root_module.join("lib.rs");
+        println!("Creating {lib_rs:?} ...");
+        std::fs::write(&lib_rs, self.generate_root_module(root_module))?;
+
         Ok(())
     }
 
@@ -127,16 +126,34 @@ impl ModuleGenerator {
 
         output.push_str(&format!("//! {title}\n\n"));
         output.push_str(indoc::indoc! {r###"
+            use super::INPUT;
+
+            pub fn run() -> usize {
+                0
+            }
+
             #[cfg(test)]
             mod tests {
-                use super::*;
-
                 #[test]
                 fn run() {
-                    todo!()
+                    assert_eq!(super::run(), 0)
                 }
             }
         "###});
+
+        output
+    }
+
+    fn generate_root_module(&self, path: &Path) -> String {
+        let mut output = String::new();
+
+        let directory = std::fs::read_dir(path).unwrap();
+        for file in directory.map(|e| e.unwrap().file_name()).sorted() {
+            let filename = file.into_string().unwrap();
+            if !filename.ends_with(".rs") {
+                output.push_str(&format!("pub mod {filename};\n"));
+            }
+        }
 
         output
     }

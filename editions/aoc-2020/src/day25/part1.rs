@@ -1,6 +1,6 @@
 //! Part 1
 
-use crate::days::day25::{
+use super::{
     common::{determine_loop_size, parse_keys, transform_subject_number_loop},
     INPUT,
 };

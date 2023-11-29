@@ -12,4 +12,5 @@ aoc-sx-webclient = { path = "../aoc-sx-webclient" }
 scraper = "0.18.1"
 
 indoc = { workspace = true }
+itertools = { workspace = true }
 url = { workspace = true }

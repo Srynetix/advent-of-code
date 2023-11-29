@@ -85,8 +85,7 @@ fn main() -> Result<()> {
             let path = PathBuf::from(".")
                 .join("editions")
                 .join(format!("aoc-{year}"))
-                .join("src")
-                .join("days");
+                .join("src");
             let generator = ModuleGenerator::new(token);
             generator.generate_module(path, ModuleParameters { year, day })?;
         }

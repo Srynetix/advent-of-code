@@ -171,6 +171,7 @@ dependencies = [
  "aoc-sx-core",
  "aoc-sx-webclient",
  "indoc",
+ "itertools",
  "scraper",
  "url",
 ]
