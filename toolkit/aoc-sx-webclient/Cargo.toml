@@ -9,5 +9,6 @@ aoc-sx-core = { path = "../aoc-sx-core" }
 cookie_store = "0.20.0"
 ureq = { version = "2.9.1", features = ["cookies"] }
 
+scraper = { workspace = true }
 thiserror = { workspace = true }
 url = { workspace = true }

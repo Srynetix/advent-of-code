@@ -29,6 +29,8 @@ once_cell = "1.18.0"
 petgraph = "0.6.4"
 # Regular expressions
 regex = "1.10.2"
+# Scrap HTML pages
+scraper = "0.18.1"
 # Serialization/deserialization
 serde = { version = "1.0.193", features = ["derive"] }
 # Serde on plain strings

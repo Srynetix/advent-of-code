@@ -193,6 +193,7 @@ version = "0.1.0"
 dependencies = [
  "aoc-sx-core",
  "cookie_store",
+ "scraper",
  "thiserror",
  "ureq",
  "url",

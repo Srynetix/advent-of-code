@@ -2,6 +2,7 @@ use std::time::Duration;
 
 use aoc_sx_core::exercise::{ExerciseDay, ExercisePart, ExerciseYear};
 use cookie_store::CookieStore;
+use scraper::{Html, Selector};
 use ureq::{Agent, AgentBuilder, Cookie};
 use url::Url;
 
@@ -54,12 +55,17 @@ impl Client {
             .map_err(|e| Error::NetworkError(e.to_string()))?;
 
         let body = response.into_string().unwrap();
-        if body.contains("You gave an answer too recently") {
-            Ok(PuzzleAnswer::TooManyRequests)
-        } else if body.contains("That's not the right answer") {
-            Ok(PuzzleAnswer::Failed)
+        let document = Html::parse_document(&body);
+        let selector = Selector::parse("article").unwrap();
+        let node = document.root_element().select(&selector).next().unwrap();
+        let node_text = node.text().collect::<String>();
+
+        if node_text.contains("You gave an answer too recently") {
+            Ok(PuzzleAnswer::TooManyRequests(node_text))
+        } else if node_text.contains("That's not the right answer") {
+            Ok(PuzzleAnswer::Failed(node_text))
         } else {
-            Ok(PuzzleAnswer::Success)
+            Ok(PuzzleAnswer::Success(node_text))
         }
     }
 
@@ -138,7 +144,7 @@ pub struct ExercisePage {
 
 #[derive(Debug)]
 pub enum PuzzleAnswer {
-    Success,
-    Failed,
-    TooManyRequests,
+    Success(String),
+    Failed(String),
+    TooManyRequests(String),
 }
