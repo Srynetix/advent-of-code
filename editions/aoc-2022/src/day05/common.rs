@@ -2,6 +2,12 @@
 
 use aoc_sx::{itertools::Itertools, once_cell::sync::Lazy, regex::Regex};
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum CraneType {
+    CrateMover9000,
+    CrateMover9001,
+}
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct CrateStackIndex(usize);
 
@@ -60,6 +66,7 @@ impl RearrangementProcedure {
 pub struct Ship {
     stacks: Vec<CrateStack>,
     procedures: Vec<RearrangementProcedure>,
+    crane_type: CraneType,
 }
 
 impl Ship {
@@ -73,7 +80,15 @@ impl Ship {
         let stacks = Self::parse_stacks(stack_input);
         let procedures = Self::parse_procedures(proc_input);
 
-        Self { stacks, procedures }
+        Self {
+            stacks,
+            procedures,
+            crane_type: CraneType::CrateMover9000,
+        }
+    }
+
+    pub fn set_crane_type(&mut self, crane_type: CraneType) {
+        self.crane_type = crane_type;
     }
 
     fn get_stack_count_from_input(input: &str) -> usize {
@@ -128,7 +143,12 @@ impl Ship {
     }
 
     pub fn apply_procedure(&mut self, procedure: &RearrangementProcedure) {
-        let new_vec = self.stacks[procedure.source.0 - 1].pop_n_elements(procedure.amount);
+        let mut new_vec = self.stacks[procedure.source.0 - 1].pop_n_elements(procedure.amount);
+        if self.crane_type == CraneType::CrateMover9001 {
+            // Reverse!
+            new_vec = new_vec.into_iter().rev().collect::<Vec<_>>();
+        }
+
         self.stacks[procedure.destination.0 - 1].push_elements(new_vec);
     }
 
@@ -186,6 +206,7 @@ mod tests {
         assert_eq!(
             ship,
             Ship {
+                crane_type: CraneType::CrateMover9000,
                 stacks: vec![
                     CrateStack {
                         stack: vec![Crate('Z'), Crate('N')],
@@ -224,10 +245,19 @@ mod tests {
     }
 
     #[test]
-    fn apply_procedures() {
+    fn apply_procedures_9000() {
         let mut ship = Ship::from_input(SAMPLE);
         ship.apply_internal_procedures();
 
         assert_eq!(ship.get_stack_tops_to_string(), "CMZ");
+    }
+
+    #[test]
+    fn apply_procedures_9001() {
+        let mut ship = Ship::from_input(SAMPLE);
+        ship.set_crane_type(CraneType::CrateMover9001);
+        ship.apply_internal_procedures();
+
+        assert_eq!(ship.get_stack_tops_to_string(), "MCD");
     }
 }
