@@ -101,8 +101,8 @@ impl TryFrom<&str> for ExercisePart {
 
     fn try_from(value: &str) -> Result<Self, Self::Error> {
         match &value.to_lowercase()[..] {
-            "first" => Ok(Self::First),
-            "second" => Ok(Self::Second),
+            "1" => Ok(Self::First),
+            "2" => Ok(Self::Second),
             other => Err(Error::InvalidPart(other.into())),
         }
     }

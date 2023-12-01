@@ -10,8 +10,8 @@ test-year YEAR:
     cargo test --release -p aoc-{{ YEAR }}
 
 # Run AoC test day
-test-day YEAR DAY:
-    cargo test --release -p aoc-{{ YEAR }} day{{ DAY }}
+test-day YEAR DAY *REMAINING:
+    cargo test --release -p aoc-{{ YEAR }} day{{ DAY }} {{ REMAINING }}
 
 # Run all AoC tests
 test-all:
