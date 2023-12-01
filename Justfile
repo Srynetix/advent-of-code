@@ -6,8 +6,12 @@ tk *ARGS:
     cargo run --release -p aoc-sx-cli {{ ARGS }}
 
 # Run AoC tests
-test YEAR:
+test-year YEAR:
     cargo test --release -p aoc-{{ YEAR }}
+
+# Run AoC test day
+test-day YEAR DAY:
+    cargo test --release -p aoc-{{ YEAR }} day{{ DAY }}
 
 # Run all AoC tests
 test-all:
