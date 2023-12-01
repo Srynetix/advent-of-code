@@ -1,6 +1,6 @@
 //! Common
 
-use aoc_sx::once_cell::sync::Lazy;
+use aoc_sx::{itertools::Itertools, once_cell::sync::Lazy};
 
 #[derive(Debug)]
 pub struct CalibrationLine(String);
@@ -10,6 +10,10 @@ impl CalibrationLine {
         Self(input.trim().to_string())
     }
 
+    fn digit_index_to_char(index: usize) -> char {
+        char::from_digit((index + 1) as u32, 10).expect("should be a digit!")
+    }
+
     pub fn with_spelled_digits_converted_to_integers(&self) -> Self {
         static DIGITS: Lazy<&[&'static str]> = Lazy::new(|| {
             &[
@@ -17,22 +21,20 @@ impl CalibrationLine {
             ]
         });
 
-        let mut replacements = vec![];
-        for (index, value) in DIGITS.iter().enumerate() {
-            for (match_index, _) in self.0.match_indices(value) {
-                replacements.push((
-                    match_index,
-                    char::from_digit((index + 1) as u32, 10).unwrap(),
-                ));
-            }
-        }
-
-        // Make sure the replacements are in order!
-        replacements.sort_by_key(|(k, _)| *k);
+        let inserts = DIGITS
+            .iter()
+            .enumerate()
+            .flat_map(|(index, value)| {
+                self.0
+                    .match_indices(value)
+                    .map(move |(position, _)| (position, Self::digit_index_to_char(index)))
+            })
+            .sorted_by_key(|(k, _)| *k)
+            .collect_vec();
 
         let mut new_line = self.0.clone();
-        for (offset, (match_index, repl)) in replacements.iter().enumerate() {
-            new_line.insert(match_index + offset, *repl);
+        for (offset, (match_index, ch)) in inserts.into_iter().enumerate() {
+            new_line.insert(match_index + offset, ch);
         }
 
         Self(new_line)
