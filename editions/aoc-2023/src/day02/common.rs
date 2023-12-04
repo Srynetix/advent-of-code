@@ -74,6 +74,18 @@ impl Game {
         }
     }
 
+    pub fn can_run_game_with_cubeset(&self, cubeset: &CubeSet) -> bool {
+        for set in &self.sets {
+            for (color, count) in set.iter() {
+                if cubeset.get(color).unwrap_or(&0) < count {
+                    return false;
+                }
+            }
+        }
+
+        true
+    }
+
     pub fn get_minimum_cubeset_required(&self) -> CubeSet {
         let mut map = HashMap::<Color, usize>::new();
 
@@ -105,11 +117,11 @@ impl GameList {
         )
     }
 
-    pub fn filter_possible_games(&self, bag: &Bag) -> Vec<&Game> {
+    pub fn filter_possible_games(&self, set: &CubeSet) -> Vec<&Game> {
         let mut games = vec![];
 
         for game in self.0.values() {
-            if bag.can_run_game(game) {
+            if game.can_run_game_with_cubeset(set) {
                 games.push(game);
             }
         }
@@ -117,8 +129,8 @@ impl GameList {
         games
     }
 
-    pub fn sum_of_possible_games_ids(&self, bag: &Bag) -> usize {
-        self.filter_possible_games(bag).iter().map(|g| g.id).sum()
+    pub fn sum_of_possible_games_ids(&self, set: &CubeSet) -> usize {
+        self.filter_possible_games(set).iter().map(|g| g.id).sum()
     }
 
     pub fn sum_of_minimum_cubeset_powers(&self) -> usize {
@@ -137,35 +149,6 @@ impl Deref for GameList {
     }
 }
 
-#[derive(Debug, PartialEq, Eq)]
-pub struct Bag(CubeSet);
-
-impl Bag {
-    pub fn from_input(input: &str) -> Self {
-        Self(CubeSet::from_input(input))
-    }
-
-    pub fn can_run_game(&self, game: &Game) -> bool {
-        for set in &game.sets {
-            for (color, count) in set.iter() {
-                if self.0.get(color).unwrap_or(&0) < count {
-                    return false;
-                }
-            }
-        }
-
-        true
-    }
-}
-
-impl Deref for Bag {
-    type Target = CubeSet;
-
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-
 #[cfg(test)]
 mod tests {
     use std::ops::Deref;
@@ -174,7 +157,7 @@ mod tests {
 
     use crate::day02::common::{CubeSet, Game};
 
-    use super::{Bag, Color, GameList};
+    use super::{Color, GameList};
 
     const SAMPLE: &str = indoc! {r#"
         Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
@@ -235,7 +218,7 @@ mod tests {
     #[test]
     fn possible_games() {
         let game_list = GameList::from_input(SAMPLE);
-        let bag = Bag::from_input("12 red, 13 green, 14 blue");
+        let bag = CubeSet::from_input("12 red, 13 green, 14 blue");
         let possible_games = game_list.filter_possible_games(&bag);
         assert_eq!(
             possible_games.iter().map(|g| g.id).sorted().collect_vec(),
@@ -246,7 +229,7 @@ mod tests {
     #[test]
     fn possible_games_sum() {
         let game_list = GameList::from_input(SAMPLE);
-        let bag = Bag::from_input("12 red, 13 green, 14 blue");
+        let bag = CubeSet::from_input("12 red, 13 green, 14 blue");
         assert_eq!(game_list.sum_of_possible_games_ids(&bag), 8);
     }
 
