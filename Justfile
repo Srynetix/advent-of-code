@@ -7,15 +7,15 @@ tk *ARGS:
 
 # Run AoC tests
 test-year YEAR:
-    cargo test --release -p aoc-{{ YEAR }}
+    cargo test --release -p aoc-{{ YEAR }} -- -Zunstable-options --report-time
 
 # Run AoC test day
-test-day YEAR DAY *REMAINING:
-    cargo test --release -p aoc-{{ YEAR }} day{{ DAY }} {{ REMAINING }}
+test-day YEAR DAY:
+    cargo test --release -p aoc-{{ YEAR }} day{{ DAY }} -- -Zunstable-options --report-time
 
 # Run all AoC tests
 test-all:
-    cargo test --release
+    cargo test --release -- -Zunstable-options --report-time
 
 # Format code
 fmt:
