@@ -13,23 +13,32 @@ impl BoatRace {
         Self { time, distance }
     }
 
-    pub fn can_win_by_pressing_button_for_milliseconds(&self, time: usize) -> bool {
-        if time >= self.time {
-            return false;
+    fn get_min_time_to_beat_the_record(&self) -> usize {
+        let mut scan_range = 0..self.time / 2;
+
+        loop {
+            let dist = (scan_range.end - scan_range.start).div_ceil(2);
+            let n = scan_range.start + dist;
+
+            if n * (self.time - n) > self.distance {
+                if dist == 1 {
+                    // That's the one!
+                    return n;
+                } else {
+                    scan_range.end = n;
+                }
+            } else {
+                scan_range.start = n;
+            }
+
+            if dist == 0 {
+                panic!("Oops, cannot beat record.")
+            }
         }
-
-        let remaining_time = self.time - time;
-        let speed = time;
-
-        speed * remaining_time > self.distance
-    }
-
-    pub fn ways_to_beat_the_record(&self) -> impl Iterator<Item = usize> + '_ {
-        (0..self.time).filter(|&v| self.can_win_by_pressing_button_for_milliseconds(v))
     }
 
     pub fn count_ways_to_beat_the_record(&self) -> usize {
-        self.ways_to_beat_the_record().count()
+        1 + self.time - self.get_min_time_to_beat_the_record() * 2
     }
 }
 
@@ -71,6 +80,24 @@ impl BoatRaces {
         }
     }
 
+    pub fn with_merged_distances(&self) -> Self {
+        let (new_time, new_distance) = self.races.iter().map(|r| (r.time, r.distance)).fold(
+            (String::new(), String::new()),
+            |(mut t_acc, mut d_acc), (t, d)| {
+                t_acc.push_str(&t.to_string());
+                d_acc.push_str(&d.to_string());
+                (t_acc, d_acc)
+            },
+        );
+
+        Self {
+            races: vec![BoatRace::new(
+                new_time.parse::<usize>().unwrap(),
+                new_distance.parse::<usize>().unwrap(),
+            )],
+        }
+    }
+
     pub fn product_ways_to_beat_records(&self) -> usize {
         self.races
             .iter()
@@ -81,7 +108,7 @@ impl BoatRaces {
 
 #[cfg(test)]
 mod tests {
-    use aoc_sx::{indoc::indoc, itertools::Itertools};
+    use aoc_sx::indoc::indoc;
 
     use super::{BoatRace, BoatRaces};
 
@@ -117,13 +144,17 @@ mod tests {
     #[test]
     fn ways_to_beat_the_record() {
         let races = BoatRaces::from_input(SAMPLE);
-        assert_eq!(
-            races.races[0].ways_to_beat_the_record().collect_vec(),
-            &[2, 3, 4, 5]
-        );
+        assert_eq!(races.races[0].count_ways_to_beat_the_record(), 4);
         assert_eq!(races.races[1].count_ways_to_beat_the_record(), 8);
         assert_eq!(races.races[2].count_ways_to_beat_the_record(), 9);
 
         assert_eq!(races.product_ways_to_beat_records(), 288);
+    }
+
+    #[test]
+    fn ways_to_beat_the_record_merged() {
+        let races = BoatRaces::from_input(SAMPLE).with_merged_distances();
+
+        assert_eq!(races.product_ways_to_beat_records(), 71_503);
     }
 }

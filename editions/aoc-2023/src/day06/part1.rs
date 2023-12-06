@@ -10,6 +10,6 @@ pub fn run() -> usize {
 mod tests {
     #[test]
     fn run() {
-        assert_eq!(super::run(), 0)
+        assert_eq!(super::run(), 1_155_175)
     }
 }
