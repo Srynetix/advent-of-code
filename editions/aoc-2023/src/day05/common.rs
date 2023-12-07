@@ -73,6 +73,17 @@ impl ConversionMapLine {
             None
         }
     }
+
+    pub fn reverse_map_number(&self, number: usize) -> Option<usize> {
+        let dest_range =
+            self.destination_range_start..self.destination_range_start + self.range_length;
+        if dest_range.contains(&number) {
+            let offset = number - self.destination_range_start;
+            Some(self.source_range_start + offset)
+        } else {
+            None
+        }
+    }
 }
 
 #[derive(Debug, PartialEq, Eq)]
@@ -85,6 +96,17 @@ impl ConversionMap {
     pub fn map_number(&self, number: usize) -> usize {
         for line in &self.lines {
             if let Some(value) = line.map_number(number) {
+                return value;
+            }
+        }
+
+        // Not found, return same number
+        number
+    }
+
+    pub fn reverse_map_number(&self, number: usize) -> usize {
+        for line in &self.lines {
+            if let Some(value) = line.reverse_map_number(number) {
                 return value;
             }
         }
@@ -167,6 +189,16 @@ impl Almanac {
         cursor
     }
 
+    pub fn get_seed_number_from_location(&self, seed_number: usize) -> usize {
+        let mut cursor = seed_number;
+
+        for map in self.conversion_maps.iter().rev() {
+            cursor = map.reverse_map_number(cursor);
+        }
+
+        cursor
+    }
+
     fn get_lowest_location_number_for_range(&self, range: Range<usize>) -> usize {
         range
             .into_iter()
@@ -190,6 +222,19 @@ impl Almanac {
             .map(|r| self.get_lowest_location_number_for_range(r))
             .min()
             .unwrap()
+    }
+
+    pub fn get_lowest_location_numbers_using_reverse_bruteforce(&self) -> usize {
+        for n in 0..usize::MAX {
+            let seed_n = self.get_seed_number_from_location(n);
+            for seed in self.seeds.seed_ranges() {
+                if seed.contains(&seed_n) {
+                    return n;
+                }
+            }
+        }
+
+        panic!("Nope")
     }
 }
 
@@ -289,6 +334,16 @@ mod tests {
         let almanac = Almanac::from_input(SAMPLE);
 
         assert_eq!(almanac.get_lowest_location_numbers_from_seeds(), 35);
+    }
+
+    #[test]
+    fn lowest_flattened_range_bruteforce() {
+        let almanac = Almanac::from_input(SAMPLE);
+
+        assert_eq!(
+            almanac.get_lowest_location_numbers_using_reverse_bruteforce(),
+            46
+        );
     }
 
     #[test]
