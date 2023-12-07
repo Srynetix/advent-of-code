@@ -1,15 +1,15 @@
 //! Part 1
 
-use super::INPUT;
+use super::{common::Game, INPUT};
 
 pub fn run() -> usize {
-    0
+    Game::from_input(INPUT).total_winnings()
 }
 
 #[cfg(test)]
 mod tests {
     #[test]
     fn run() {
-        assert_eq!(super::run(), 0)
+        assert_eq!(super::run(), 248_113_761)
     }
 }
