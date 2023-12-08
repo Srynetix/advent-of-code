@@ -5,11 +5,13 @@ edition = "2021"
 
 [dependencies]
 aoc-sx-algo = { path = "../aoc-sx-algo" }
+aoc-sx-ui = { path = "../aoc-sx-ui" }
 
 image = { workspace = true }
 indoc = { workspace = true }
 itertools = { workspace = true }
 maplit = { workspace = true }
+num = { workspace = true }
 once_cell = { workspace = true }
 petgraph = { workspace = true }
 regex = { workspace = true }

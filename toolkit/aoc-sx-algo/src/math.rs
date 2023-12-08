@@ -9,6 +9,14 @@ pub struct Vec2 {
     pub y: isize,
 }
 
+impl Vec2 {
+    pub const ZERO: Self = Self::new(0, 0);
+
+    pub const fn new(x: isize, y: isize) -> Self {
+        Self { x, y }
+    }
+}
+
 impl PartialOrd for Vec2 {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
         Some(self.cmp(other))
