@@ -1,4 +1,4 @@
-use std::cmp::Ordering;
+use std::{cmp::Ordering, ops::Add};
 
 /// Vec3
 #[derive(Debug, PartialEq, Eq, Hash, Clone, Copy)]
@@ -41,6 +41,17 @@ impl From<(isize, isize)> for Vec2 {
 impl From<Vec2> for (isize, isize) {
     fn from(vec: Vec2) -> Self {
         (vec.x, vec.y)
+    }
+}
+
+impl Add<Vec2> for Vec2 {
+    type Output = Vec2;
+
+    fn add(self, rhs: Vec2) -> Self::Output {
+        Vec2 {
+            x: self.x + rhs.x,
+            y: self.y + rhs.y,
+        }
     }
 }
 
