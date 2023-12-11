@@ -125,6 +125,120 @@
 //! ```
 //!
 //! Find the single giant loop starting at <code>S</code>. <em>How many steps along the loop does it take to get from the starting position to the point farthest from the starting position?</em>
+//!
+//! # --- Part Two ---
+//!
+//! You quickly reach the farthest point of the loop, but the animal never emerges. Maybe its nest is <em>within the area enclosed by the loop</em>?
+//!
+//! To determine whether it's even worth taking the time to search for such a nest, you should calculate how many tiles are contained within the loop. For example:
+//!
+//! ```text
+//! ...........
+//! .S-------7.
+//! .|F-----7|.
+//! .||.....||.
+//! .||.....||.
+//! .|L-7.F-J|.
+//! .|..|.|..|.
+//! .L--J.L--J.
+//! ...........
+//! ```
+//!
+//! The above loop encloses merely <em>four tiles</em> - the two pairs of <code>.</code> in the southwest and southeast (marked <code>I</code> below). The middle <code>.</code> tiles (marked <code>O</code> below) are <em>not</em> in the loop. Here is the same loop again with those regions marked:
+//!
+//! ```text
+//! ...........
+//! .S-------7.
+//! .|F-----7|.
+//! .||OOOOO||.
+//! .||OOOOO||.
+//! .|L-7OF-J|.
+//! .|II|O|II|.
+//! .L--JOL--J.
+//! .....O.....
+//! ```
+//!
+//! In fact, there doesn't even need to be a full tile path to the outside for tiles to count as outside the loop - squeezing between pipes is also allowed! Here, <code>I</code> is still within the loop and <code>O</code> is still outside the loop:
+//!
+//! ```text
+//! ..........
+//! .S------7.
+//! .|F----7|.
+//! .||OOOO||.
+//! .||OOOO||.
+//! .|L-7F-J|.
+//! .|II||II|.
+//! .L--JL--J.
+//! ..........
+//! ```
+//!
+//! In both of the above examples, <code><em>4</em></code> tiles are enclosed by the loop.
+//!
+//! Here's a larger example:
+//!
+//! ```text
+//! .F----7F7F7F7F-7....
+//! .|F--7||||||||FJ....
+//! .||.FJ||||||||L7....
+//! FJL7L7LJLJ||LJ.L-7..
+//! L--J.L7...LJS7F-7L7.
+//! ....F-J..F7FJ|L7L7L7
+//! ....L7.F7||L7|.L7L7|
+//! .....|FJLJ|FJ|F7|.LJ
+//! ....FJL-7.||.||||...
+//! ....L---J.LJ.LJLJ...
+//! ```
+//!
+//! The above sketch has many random bits of ground, some of which are in the loop (<code>I</code>) and some of which are outside it (<code>O</code>):
+//!
+//! ```text
+//! OF----7F7F7F7F-7OOOO
+//! O|F--7||||||||FJOOOO
+//! O||OFJ||||||||L7OOOO
+//! FJL7L7LJLJ||LJIL-7OO
+//! L--JOL7IIILJS7F-7L7O
+//! OOOOF-JIIF7FJ|L7L7L7
+//! OOOOL7IF7||L7|IL7L7|
+//! OOOOO|FJLJ|FJ|F7|OLJ
+//! OOOOFJL-7O||O||||OOO
+//! OOOOL---JOLJOLJLJOOO
+//! ```
+//!
+//! In this larger example, <code><em>8</em></code> tiles are enclosed by the loop.
+//!
+//! Any tile that isn't part of the main loop can count as being enclosed by the loop. Here's another example with many bits of junk pipe lying around that aren't connected to the main loop at all:
+//!
+//! ```text
+//! FF7FSF7F7F7F7F7F---7
+//! L|LJ||||||||||||F--J
+//! FL-7LJLJ||||||LJL-77
+//! F--JF--7||LJLJ7F7FJ-
+//! L---JF-JLJ.||-FJLJJ7
+//! |F|F-JF---7F7-L7L|7|
+//! |FFJF7L7F-JF7|JL---7
+//! 7-L-JL7||F7|L7F-7F7|
+//! L.L7LFJ|||||FJL7||LJ
+//! L7JLJL-JLJLJL--JLJ.L
+//! ```
+//!
+//! Here are just the tiles that are <em>enclosed by the loop</em> marked with <code>I</code>:
+//!
+//! ```text
+//! FF7FSF7F7F7F7F7F---7
+//! L|LJ||||||||||||F--J
+//! FL-7LJLJ||||||LJL-77
+//! F--JF--7||LJLJIF7FJ-
+//! L---JF-JLJIIIIFJLJJ7
+//! |F|F-JF---7IIIL7L|7|
+//! |FFJF7L7F-JF7IIL---7
+//! 7-L-JL7||F7|L7F-7F7|
+//! L.L7LFJ|||||FJL7||LJ
+//! L7JLJL-JLJLJL--JLJ.L
+//! ```
+//!
+//! In this last example, <code><em>10</em></code> tiles are enclosed by the loop.
+//!
+//! Figure out whether you have time to search for the nest by calculating the area within the loop. <em>How many tiles are enclosed by the loop?</em>
 
 pub mod common;
 pub mod part1;
