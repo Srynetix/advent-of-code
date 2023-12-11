@@ -69,6 +69,23 @@ impl Client {
         }
     }
 
+    pub fn fetch_input_page(
+        &self,
+        year: ExerciseYear,
+        day: ExerciseDay,
+    ) -> Result<PuzzleInput, Error> {
+        let input_url = self.get_exercise_input_url(year, day);
+
+        let input_response = self
+            .agent
+            .get(input_url.as_str())
+            .call()
+            .map_err(|e| Error::NetworkError(e.to_string()))?;
+        let input_body = input_response.into_string().unwrap();
+
+        Ok(PuzzleInput(input_body))
+    }
+
     pub fn fetch_exercise_page(
         &self,
         year: ExerciseYear,
@@ -84,18 +101,12 @@ impl Client {
             .map_err(|e| Error::NetworkError(e.to_string()))?;
         let page_body = page_response.into_string().unwrap();
 
-        let input_response = self
-            .agent
-            .get(input_url.as_str())
-            .call()
-            .map_err(|e| Error::NetworkError(e.to_string()))?;
-        let input_body = input_response.into_string().unwrap();
-
+        let puzzle_input = self.fetch_input_page(year, day)?;
         Ok(ExercisePage {
             input_url,
             page_url,
             page_content: HtmlContent(page_body),
-            puzzle_input: PuzzleInput(input_body),
+            puzzle_input,
         })
     }
 
