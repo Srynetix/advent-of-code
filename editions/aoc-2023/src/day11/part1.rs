@@ -1,15 +1,15 @@
 //! Part 1
 
-use super::INPUT;
+use super::{common::Universe, INPUT};
 
 pub fn run() -> usize {
-    0
+    Universe::from_input(INPUT).expand(1).sum_shortest_paths()
 }
 
 #[cfg(test)]
 mod tests {
     #[test]
     fn run() {
-        assert_eq!(super::run(), 0)
+        assert_eq!(super::run(), 10_033_566)
     }
 }

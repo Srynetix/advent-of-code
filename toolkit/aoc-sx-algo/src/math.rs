@@ -15,6 +15,10 @@ impl Vec2 {
     pub const fn new(x: isize, y: isize) -> Self {
         Self { x, y }
     }
+
+    pub fn manhattan_distance(&self, other: Self) -> isize {
+        (self.x - other.x).abs() + (self.y - other.y).abs()
+    }
 }
 
 impl PartialOrd for Vec2 {
@@ -52,6 +56,12 @@ impl Add<Vec2> for Vec2 {
             x: self.x + rhs.x,
             y: self.y + rhs.y,
         }
+    }
+}
+
+impl std::fmt::Display for Vec2 {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_fmt(format_args!("({}, {})", self.x, self.y))
     }
 }
 
