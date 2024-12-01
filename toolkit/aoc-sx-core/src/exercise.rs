@@ -1,7 +1,7 @@
 use std::{fmt::Display, str::FromStr};
 
 const MIN_YEAR: u16 = 2015;
-const MAX_YEAR: u16 = 2023;
+const MAX_YEAR: u16 = 2024;
 
 #[derive(Debug, thiserror::Error)]
 pub enum Error {

@@ -21,9 +21,9 @@ pub struct Client {
 
 impl Client {
     pub fn new(session_token: String) -> Self {
-        let cookie = Cookie::build("session", session_token)
+        let cookie = Cookie::build(("session", session_token))
             .domain(".adventofcode.com")
-            .finish();
+            .build();
         let mut store = CookieStore::default();
         let url = Url::try_from("https://adventofcode.com").unwrap();
         store.insert_raw(&cookie, &url).unwrap();

@@ -74,7 +74,7 @@ pub fn generate_initial_solutions(sorted_sets: &[BTreeSet<char>]) -> Vec<HashMap
         .collect();
 
     // Generate each possible combinations
-    let solutions = vec![
+    let solutions = [
         vec![p0, p1n3[0], p2n5[0], p1n3[1], p4n6[0], p2n5[1], p4n6[1]],
         vec![p0, p1n3[0], p2n5[0], p1n3[1], p4n6[1], p2n5[1], p4n6[0]],
         vec![p0, p1n3[0], p2n5[1], p1n3[1], p4n6[0], p2n5[0], p4n6[1]],

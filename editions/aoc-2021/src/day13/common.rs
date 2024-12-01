@@ -1,6 +1,6 @@
 //! Common
 
-use std::{cmp::Ordering, collections::LinkedList, path::Path};
+use std::{cmp::Ordering, collections::LinkedList, fmt::Display, path::Path};
 
 use aoc_sx::image::ImageBuffer;
 
@@ -155,23 +155,21 @@ impl TransparentPaper {
     }
 }
 
-impl ToString for TransparentPaper {
-    fn to_string(&self) -> String {
-        let mut output = String::new();
-
+impl Display for TransparentPaper {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         for (idx, &v) in self.data.iter().enumerate() {
             if idx > 0 && idx % self.width == 0 {
-                output.push('\n');
+                writeln!(f)?;
             }
 
             if v {
-                output.push('#');
+                write!(f, "#")?;
             } else {
-                output.push('.');
+                write!(f, ".")?;
             }
         }
 
-        output
+        Ok(())
     }
 }
 

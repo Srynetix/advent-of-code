@@ -1,5 +1,7 @@
 //! Common
 
+use std::fmt::Display;
+
 /// Cup.
 pub type Cup = usize;
 
@@ -50,9 +52,9 @@ impl Cups {
     }
 }
 
-impl ToString for Cups {
-    fn to_string(&self) -> String {
-        cups_to_string(self, self.head)
+impl Display for Cups {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", cups_to_string(self, self.head))
     }
 }
 
