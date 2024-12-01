@@ -36,6 +36,16 @@ impl Sorter {
     pub fn sum_distances(v: Vec<u32>) -> u32 {
         v.into_iter().sum()
     }
+
+    pub fn similarity_score(value: u32, v: &[u32]) -> u32 {
+        v.iter().filter(|v| **v == value).count() as u32
+    }
+
+    pub fn total_similarity_score(v1: &[u32], v2: &[u32]) -> u32 {
+        v1.iter()
+            .map(|v| Self::similarity_score(*v, v2) * *v)
+            .sum::<u32>()
+    }
 }
 
 #[cfg(test)]
@@ -61,5 +71,11 @@ mod tests {
         let d = Sorter::distances(&v1, &v2);
         assert_eq!(d, &[2, 1, 0, 1, 2, 5]);
         assert_eq!(Sorter::sum_distances(d), 11);
+    }
+
+    #[test]
+    fn sample_2() {
+        let (v1, v2) = Sorter::from_input(SAMPLE);
+        assert_eq!(Sorter::total_similarity_score(&v1, &v2), 31);
     }
 }
