@@ -1,7 +1,5 @@
 //! Part 2
 
-use super::INPUT;
-
 pub fn run() -> usize {
     0
 }
