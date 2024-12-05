@@ -11,7 +11,7 @@ test-year YEAR:
 
 # Run AoC test day
 test-day YEAR DAY:
-    cargo test --release -p aoc-{{ YEAR }} day{{ DAY }}
+    cargo test --release -p aoc-{{ YEAR }} day{{ DAY }} -- --nocapture
 
 # Run all AoC tests
 test-all:
