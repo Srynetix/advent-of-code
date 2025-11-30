@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::Ship, INPUT};
+use super::{INPUT, common::Ship};
 
 pub fn run() -> String {
     let mut ship = Ship::from_input(INPUT);

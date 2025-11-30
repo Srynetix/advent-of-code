@@ -150,7 +150,7 @@ impl FromStr for GameParser {
                     .map(|m| Move::from_str(m).unwrap())
                     .collect::<Vec<_>>()
             })
-            .map(|moves| (Match::new(moves[0], moves[1])))
+            .map(|moves| Match::new(moves[0], moves[1]))
             .collect();
 
         Ok(Self { moves })

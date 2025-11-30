@@ -2,7 +2,7 @@
 
 use std::str::FromStr;
 
-use super::{common::RucksackParser, INPUT};
+use super::{INPUT, common::RucksackParser};
 
 pub fn run() -> u32 {
     RucksackParser::from_str(INPUT).unwrap().priority_sum()

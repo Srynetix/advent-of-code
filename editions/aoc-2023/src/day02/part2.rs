@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::GameList, INPUT};
+use super::{INPUT, common::GameList};
 
 pub fn run() -> usize {
     GameList::from_input(INPUT).sum_of_minimum_cubeset_powers()

@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::FishSchool, INPUT};
+use super::{INPUT, common::FishSchool};
 
 pub fn run() -> usize {
     let mut school = FishSchool::from(INPUT);

@@ -166,10 +166,10 @@ impl Schematic {
                 continue;
             }
 
-            if let Some(n) = self.number_at_position(target_pos) {
-                if !numbers.contains(&n) {
-                    numbers.push(n);
-                }
+            if let Some(n) = self.number_at_position(target_pos)
+                && !numbers.contains(&n)
+            {
+                numbers.push(n);
             }
         }
 

@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::PipeMaze, INPUT};
+use super::{INPUT, common::PipeMaze};
 
 pub fn run() -> usize {
     PipeMaze::from_input(INPUT).get_longest_position_in_loop()

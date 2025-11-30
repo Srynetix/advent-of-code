@@ -1,9 +1,8 @@
 use std::time::Duration;
 
 use aoc_sx_core::exercise::{ExerciseDay, ExercisePart, ExerciseYear};
-use cookie_store::CookieStore;
 use scraper::{Html, Selector};
-use ureq::{Agent, AgentBuilder, Cookie};
+use ureq::{Agent, Cookie, http::Uri};
 use url::Url;
 
 #[derive(Debug, thiserror::Error)]
@@ -21,18 +20,18 @@ pub struct Client {
 
 impl Client {
     pub fn new(session_token: String) -> Self {
-        let cookie = Cookie::build(("session", session_token))
-            .domain(".adventofcode.com")
-            .build();
-        let mut store = CookieStore::default();
-        let url = Url::try_from("https://adventofcode.com").unwrap();
-        store.insert_raw(&cookie, &url).unwrap();
+        let agent: Agent = Agent::config_builder()
+            .timeout_global(Some(TIMEOUT_DURATION))
+            .build()
+            .into();
 
-        let agent = AgentBuilder::new()
-            .timeout_read(TIMEOUT_DURATION)
-            .timeout_write(TIMEOUT_DURATION)
-            .cookie_store(store)
-            .build();
+        let uri: Uri = "https://adventofcode.com".parse().unwrap();
+        let cookie = Cookie::parse(
+            format!("session={session_token}; Domain=.adventofcode.com"),
+            &uri,
+        )
+        .unwrap();
+        agent.cookie_jar_lock().insert(cookie, &uri).unwrap();
 
         Self { agent }
     }
@@ -48,13 +47,13 @@ impl Client {
         day: ExerciseDay,
         part: ExercisePart,
     ) -> Result<PuzzleAnswer, Error> {
-        let response = self
+        let mut response = self
             .agent
             .post(self.get_exercise_answer_url(year, day).as_str())
-            .send_form(&[("level", part.as_level()), ("answer", answer)])
+            .send_form([("level", part.as_level()), ("answer", answer)])
             .map_err(|e| Error::NetworkError(e.to_string()))?;
 
-        let body = response.into_string().unwrap();
+        let body = response.body_mut().read_to_string().unwrap();
         let document = Html::parse_document(&body);
         let selector = Selector::parse("article").unwrap();
         let node = document.root_element().select(&selector).next().unwrap();
@@ -76,12 +75,12 @@ impl Client {
     ) -> Result<PuzzleInput, Error> {
         let input_url = self.get_exercise_input_url(year, day);
 
-        let input_response = self
+        let mut input_response = self
             .agent
             .get(input_url.as_str())
             .call()
             .map_err(|e| Error::NetworkError(e.to_string()))?;
-        let input_body = input_response.into_string().unwrap();
+        let input_body = input_response.body_mut().read_to_string().unwrap();
 
         Ok(PuzzleInput(input_body))
     }
@@ -94,12 +93,12 @@ impl Client {
         let page_url = self.exercise_page_to_url(year, day);
         let input_url = self.get_exercise_input_url(year, day);
 
-        let page_response = self
+        let mut page_response = self
             .agent
             .get(page_url.as_str())
             .call()
             .map_err(|e| Error::NetworkError(e.to_string()))?;
-        let page_body = page_response.into_string().unwrap();
+        let page_body = page_response.body_mut().read_to_string().unwrap();
 
         let puzzle_input = self.fetch_input_page(year, day)?;
         Ok(ExercisePage {

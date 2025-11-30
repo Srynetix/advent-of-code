@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::Sorter, INPUT};
+use super::{INPUT, common::Sorter};
 
 pub fn run() -> usize {
     let (mut v1, mut v2) = Sorter::from_input(INPUT);

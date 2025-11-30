@@ -1,8 +1,8 @@
 //! Part 1
 
 use super::{
-    common::{Analyzer, Puzzle},
     INPUT,
+    common::{Analyzer, Puzzle},
 };
 
 pub fn run() -> usize {

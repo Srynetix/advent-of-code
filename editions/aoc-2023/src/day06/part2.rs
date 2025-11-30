@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::BoatRaces, INPUT};
+use super::{INPUT, common::BoatRaces};
 
 pub fn run() -> usize {
     BoatRaces::from_input(INPUT)

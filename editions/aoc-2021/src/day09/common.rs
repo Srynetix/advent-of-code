@@ -182,7 +182,7 @@ impl From<&str> for HeightMap {
 mod tests {
     use aoc_sx::{algo::fs::get_debug_path, indoc::indoc};
 
-    use super::{save_heightmap_to_disk, HeightMap};
+    use super::{HeightMap, save_heightmap_to_disk};
 
     const SAMPLE_DATA: &str = indoc! {"
         2199943210

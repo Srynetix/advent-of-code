@@ -1,13 +1,13 @@
 [package]
 name = "aoc-sx-webclient"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
 aoc-sx-core = { path = "../aoc-sx-core" }
 
-cookie_store = "0.21.1"
-ureq = { version = "2.11.0", features = ["cookies"] }
+cookie_store = "0.22.0"
+ureq = { version = "3.1.4", features = ["cookies"] }
 
 scraper = { workspace = true }
 thiserror = { workspace = true }

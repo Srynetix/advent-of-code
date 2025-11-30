@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::GameWithJoker, INPUT};
+use super::{INPUT, common::GameWithJoker};
 
 pub fn run() -> usize {
     GameWithJoker::from_input(INPUT).total_winnings()

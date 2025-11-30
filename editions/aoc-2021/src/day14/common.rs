@@ -1,6 +1,6 @@
 //! Common
 
-use std::collections::{hash_map::Entry, HashMap};
+use std::collections::{HashMap, hash_map::Entry};
 
 use aoc_sx::itertools::{Itertools, MinMaxResult};
 
@@ -45,12 +45,12 @@ impl<'a> PolymerSum<'a> {
         for (&(p0, p1), &target) in &self.polymer.pairs {
             let mut found = false;
             let mut found_value = 0;
-            if let Entry::Occupied(e) = self.pairs_count.entry((p0, p1)) {
-                if *e.get() > 0 {
-                    found_value = *e.get();
-                    *new_pair_counts.entry((p0, p1)).or_insert(0) -= found_value;
-                    found = true;
-                }
+            if let Entry::Occupied(e) = self.pairs_count.entry((p0, p1))
+                && *e.get() > 0
+            {
+                found_value = *e.get();
+                *new_pair_counts.entry((p0, p1)).or_insert(0) -= found_value;
+                found = true;
             }
 
             if found {
@@ -71,7 +71,7 @@ impl<'a> PolymerSum<'a> {
     }
 
     pub fn get_common_score(&self) -> u64 {
-        match self.char_count.iter().minmax_by_key(|(_, &c)| c) {
+        match self.char_count.iter().minmax_by_key(|&(_, &c)| c) {
             MinMaxResult::MinMax((_, &min), (_, &max)) => max as u64 - min as u64,
             _ => unreachable!(),
         }

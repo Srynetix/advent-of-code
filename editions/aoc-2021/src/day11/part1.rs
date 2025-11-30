@@ -3,8 +3,8 @@
 use aoc_sx::algo::fs::get_debug_path;
 
 use super::{
-    common::{save_grid_to_disk, Grid},
     INPUT,
+    common::{Grid, save_grid_to_disk},
 };
 
 pub fn run() -> usize {

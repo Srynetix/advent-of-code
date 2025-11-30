@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::JoltAnalyzer, INPUT};
+use super::{INPUT, common::JoltAnalyzer};
 
 pub fn run() -> usize {
     let (diff1, diff3) = JoltAnalyzer::get_1x3_jolt_differences(

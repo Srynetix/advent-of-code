@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::Schematic, INPUT};
+use super::{INPUT, common::Schematic};
 
 pub fn run() -> u32 {
     Schematic::from_input(INPUT).sum_of_gear_ratios()

@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::validate_multiple_passwords_with_count, INPUT};
+use super::{INPUT, common::validate_multiple_passwords_with_count};
 
 pub fn run() -> usize {
     validate_multiple_passwords_with_count(INPUT)

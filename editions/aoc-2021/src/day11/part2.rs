@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::Grid, INPUT};
+use super::{INPUT, common::Grid};
 
 pub fn run() -> usize {
     let mut grid = Grid::from(INPUT);

@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::CrabSwarm, INPUT};
+use super::{INPUT, common::CrabSwarm};
 
 pub fn run() -> u32 {
     let swarm = CrabSwarm::from(INPUT);

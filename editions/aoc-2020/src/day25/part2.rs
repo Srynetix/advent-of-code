@@ -4,6 +4,6 @@
 mod tests {
     #[test]
     fn run() {
-        assert!(true, "No part 2 the 25th!")
+        // No part 2 the 25th!
     }
 }

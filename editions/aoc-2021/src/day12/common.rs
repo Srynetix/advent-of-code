@@ -259,7 +259,7 @@ impl From<&[&str]> for Graph {
 mod tests {
     use aoc_sx::algo::fs::get_debug_path;
 
-    use super::{save_graph_to_disk, Graph};
+    use super::{Graph, save_graph_to_disk};
 
     const SAMPLE_DATA: &[&str] = &["start-A", "start-b", "A-c", "A-b", "b-d", "A-end", "b-end"];
     const LARGER_SAMPLE_DATA: &[&str] = &[

@@ -114,38 +114,32 @@ mod tests {
     #[test]
     fn sample() {
         let puzzle = Puzzle::from_input(SAMPLE);
-        assert_eq!(Analyzer::check_report_safety(&puzzle.reports[0]), true);
-        assert_eq!(Analyzer::check_report_safety(&puzzle.reports[3]), false);
+        assert!(Analyzer::check_report_safety(&puzzle.reports[0]));
+        assert!(!Analyzer::check_report_safety(&puzzle.reports[3]));
         assert_eq!(Analyzer::count_safe_reports(&puzzle), 2);
     }
 
     #[test]
     fn sample_with_dampener() {
         let puzzle = Puzzle::from_input(SAMPLE);
-        assert_eq!(
-            Analyzer::check_report_safety_with_dampener(&puzzle.reports[0]),
-            true
-        );
-        assert_eq!(
-            Analyzer::check_report_safety_with_dampener(&puzzle.reports[1]),
-            false
-        );
-        assert_eq!(
-            Analyzer::check_report_safety_with_dampener(&puzzle.reports[2]),
-            false
-        );
-        assert_eq!(
-            Analyzer::check_report_safety_with_dampener(&puzzle.reports[3]),
-            true
-        );
-        assert_eq!(
-            Analyzer::check_report_safety_with_dampener(&puzzle.reports[4]),
-            true
-        );
-        assert_eq!(
-            Analyzer::check_report_safety_with_dampener(&puzzle.reports[5]),
-            true
-        );
+        assert!(Analyzer::check_report_safety_with_dampener(
+            &puzzle.reports[0]
+        ));
+        assert!(!Analyzer::check_report_safety_with_dampener(
+            &puzzle.reports[1]
+        ));
+        assert!(!Analyzer::check_report_safety_with_dampener(
+            &puzzle.reports[2]
+        ));
+        assert!(Analyzer::check_report_safety_with_dampener(
+            &puzzle.reports[3]
+        ));
+        assert!(Analyzer::check_report_safety_with_dampener(
+            &puzzle.reports[4]
+        ));
+        assert!(Analyzer::check_report_safety_with_dampener(
+            &puzzle.reports[5]
+        ));
         assert_eq!(Analyzer::count_safe_reports_with_dampener(&puzzle), 4);
     }
 }

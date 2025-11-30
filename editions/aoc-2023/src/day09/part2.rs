@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::OasisReport, INPUT};
+use super::{INPUT, common::OasisReport};
 
 pub fn run() -> i32 {
     OasisReport::from_input(INPUT).sum_previous_predicted_values()

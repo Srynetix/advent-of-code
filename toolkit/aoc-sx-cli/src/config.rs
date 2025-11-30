@@ -1,7 +1,7 @@
 //! Config.
 
 use color_eyre::Result;
-use figment::{providers::Env, Figment};
+use figment::{Figment, providers::Env};
 use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]

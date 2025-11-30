@@ -114,7 +114,7 @@ impl Scheduler {
 
     fn validate_t(n: &[usize], a: &[usize], t: usize) -> bool {
         for i in 0..n.len() {
-            if (t + a[i]) % n[i] != 0 {
+            if !(t + a[i]).is_multiple_of(n[i]) {
                 return false;
             }
         }

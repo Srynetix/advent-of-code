@@ -99,7 +99,7 @@ impl PassportValidator {
             .filter(|&x| {
                 self.0
                     .get(*x)
-                    .map_or(false, |v| Self::try_validate_field(x, v))
+                    .is_some_and(|v| Self::try_validate_field(x, v))
             })
             .count()
             == REQUIRED_FIELDS.len()

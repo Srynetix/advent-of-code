@@ -57,7 +57,12 @@ impl Scratchcard {
     }
 
     pub fn get_points_value(&self) -> usize {
-        2usize.pow((self.winning_numbers_count() - 1) as u32)
+        let count = self.winning_numbers_count();
+        if count == 0 {
+            0
+        } else {
+            2usize.pow((count - 1) as u32)
+        }
     }
 }
 

@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::XmasScanner, INPUT};
+use super::{INPUT, common::XmasScanner};
 
 pub fn run() -> usize {
     let target = super::part1::run();

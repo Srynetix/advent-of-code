@@ -209,11 +209,7 @@ pub fn recursive_game_step(
                 run_recursive_game(&mut deck1_clone, &mut deck2_clone, memory, game_number + 1)
             } else {
                 // Normal game
-                if card1 > card2 {
-                    Player(1)
-                } else {
-                    Player(2)
-                }
+                if card1 > card2 { Player(1) } else { Player(2) }
             }
         };
 

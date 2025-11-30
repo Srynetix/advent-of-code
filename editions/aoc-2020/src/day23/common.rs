@@ -39,11 +39,7 @@ impl Cups {
     /// * `cup` - Target cup
     pub fn prev_cup(&self, cup: Cup) -> Cup {
         let dest = cup - 1;
-        if dest == 0 {
-            self.data.len() - 1
-        } else {
-            dest
-        }
+        if dest == 0 { self.data.len() - 1 } else { dest }
     }
 
     /// Join cups to string, starting from cup one (and ignoring it).

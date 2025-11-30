@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::Universe, INPUT};
+use super::{INPUT, common::Universe};
 
 pub fn run() -> usize {
     Universe::from_input(INPUT).expand(1).sum_shortest_paths()

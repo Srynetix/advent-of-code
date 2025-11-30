@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::CalibrationDocument, INPUT};
+use super::{INPUT, common::CalibrationDocument};
 
 pub fn run() -> u32 {
     CalibrationDocument::from_input(INPUT)

@@ -140,7 +140,7 @@ impl Seeds {
     pub fn seed_ranges(&self) -> impl Iterator<Item = Range<usize>> + '_ {
         self.values
             .chunks_exact(2)
-            .map(|elems| (elems[0]..elems[0] + elems[1]))
+            .map(|elems| elems[0]..elems[0] + elems[1])
     }
 }
 

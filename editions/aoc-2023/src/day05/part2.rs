@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::Almanac, INPUT};
+use super::{INPUT, common::Almanac};
 
 pub fn run() -> usize {
     Almanac::from_input(INPUT).get_lowest_location_numbers_using_reverse_bruteforce()

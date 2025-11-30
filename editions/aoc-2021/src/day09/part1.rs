@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::HeightMap, INPUT};
+use super::{INPUT, common::HeightMap};
 
 pub fn run() -> u32 {
     let hm = HeightMap::from(INPUT);

@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::PassportValidator, INPUT};
+use super::{INPUT, common::PassportValidator};
 
 pub fn run() -> usize {
     PassportValidator::parse_entries(INPUT)

@@ -182,12 +182,11 @@ impl BagSystem {
     /// * `color` - Known color
     pub fn count_inner_bags_for_color(&self, inner_color: &BagColor) -> usize {
         let relations = self.0.get(inner_color).unwrap();
-        let sum = relations
+        relations
             .iter()
             .map(|x| x.amount * self.count_inner_bags_for_color(&x.color))
             .sum::<usize>()
-            + 1;
-        sum
+            + 1
     }
 }
 

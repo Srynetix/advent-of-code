@@ -1,8 +1,8 @@
 //! Part 2
 
 use super::{
-    common::{BingoParser, BingoPlayer},
     INPUT,
+    common::{BingoParser, BingoPlayer},
 };
 
 pub fn run() -> u32 {

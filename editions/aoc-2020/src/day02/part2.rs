@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::validate_multiple_passwords_with_position, INPUT};
+use super::{INPUT, common::validate_multiple_passwords_with_position};
 
 pub fn run() -> usize {
     validate_multiple_passwords_with_position(INPUT)

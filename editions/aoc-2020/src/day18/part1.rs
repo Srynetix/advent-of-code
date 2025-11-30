@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::ExpressionParser, INPUT};
+use super::{INPUT, common::ExpressionParser};
 
 pub fn run() -> usize {
     INPUT

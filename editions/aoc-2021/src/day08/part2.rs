@@ -3,8 +3,8 @@
 use aoc_sx::algo::parse::parse_lines;
 
 use super::{
-    common::{find_solution, PatternLine},
     INPUT,
+    common::{PatternLine, find_solution},
 };
 
 pub fn run() -> usize {

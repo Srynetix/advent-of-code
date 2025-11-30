@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::InputParser, INPUT};
+use super::{INPUT, common::InputParser};
 
 pub fn run() -> usize {
     InputParser::from(INPUT)

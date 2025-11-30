@@ -114,7 +114,7 @@ impl XmasScanner {
 
                 match acc.cmp(&invalid_number) {
                     Ordering::Equal => {
-                        return Some(XmasWeaknessOutput::new(numbers, start_i, end_i))
+                        return Some(XmasWeaknessOutput::new(numbers, start_i, end_i));
                     }
                     Ordering::Greater => {
                         break;

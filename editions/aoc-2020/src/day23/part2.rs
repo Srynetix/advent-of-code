@@ -1,8 +1,8 @@
 //! Part 2
 
 use super::{
-    common::{prepare_million_cups, run_steps},
     INPUT,
+    common::{prepare_million_cups, run_steps},
 };
 
 pub fn run() -> usize {

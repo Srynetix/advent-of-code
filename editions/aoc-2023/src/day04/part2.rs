@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::ScratchcardPile, INPUT};
+use super::{INPUT, common::ScratchcardPile};
 
 pub fn run() -> usize {
     ScratchcardPile::from_input(INPUT).compute_cards_count()

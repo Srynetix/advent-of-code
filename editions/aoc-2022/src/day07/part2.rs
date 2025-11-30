@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::ShellSession, INPUT};
+use super::{INPUT, common::ShellSession};
 
 pub fn run() -> usize {
     ShellSession::from_input(INPUT)

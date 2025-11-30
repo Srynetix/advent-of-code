@@ -3,7 +3,7 @@ use std::str::FromStr;
 use color_eyre::Result;
 use tracing_error::ErrorLayer;
 use tracing_log::LogTracer;
-use tracing_subscriber::{layer::SubscriberExt, EnvFilter};
+use tracing_subscriber::{EnvFilter, layer::SubscriberExt};
 use tracing_tree::HierarchicalLayer;
 
 const DEFAULT_ENV_CONFIG: &str = "info,sqlx=error,aoc_sx=debug";

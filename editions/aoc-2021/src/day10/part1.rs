@@ -2,7 +2,7 @@
 
 use aoc_sx::{algo::parse::parse_str_lines, tap::Pipe};
 
-use super::{common::NavParser, INPUT};
+use super::{INPUT, common::NavParser};
 
 pub fn run() -> u32 {
     NavParser::check_errors_on_lines(&parse_str_lines(INPUT))

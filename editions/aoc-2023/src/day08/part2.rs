@@ -1,8 +1,8 @@
 //! Part 2
 
 use super::{
-    common::{CamelMap, MapWalker},
     INPUT,
+    common::{CamelMap, MapWalker},
 };
 
 pub fn run() -> usize {

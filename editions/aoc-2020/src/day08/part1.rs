@@ -1,8 +1,8 @@
 //! Part 1
 
 use super::{
-    common::{Interpreter, StepOutput},
     INPUT,
+    common::{Interpreter, StepOutput},
 };
 
 pub fn run() -> usize {

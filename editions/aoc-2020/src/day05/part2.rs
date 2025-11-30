@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::BoardingPass, INPUT};
+use super::{INPUT, common::BoardingPass};
 
 pub fn run() -> usize {
     let passes = BoardingPass::from_entries(INPUT);
