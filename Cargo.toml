@@ -5,6 +5,7 @@ members = [
   "./editions/aoc-2022",
   "./editions/aoc-2023",
   "./editions/aoc-2024",
+  "./editions/aoc-2025",
   "./toolkit/aoc-sx",
   "./toolkit/aoc-sx-algo",
   "./toolkit/aoc-sx-cli",
