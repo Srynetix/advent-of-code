@@ -3,8 +3,8 @@
 use aoc_sx::algo::parse::parse_str_lines;
 
 use super::{
-    common::{LineCollisioner, LineParser},
     INPUT,
+    common::{LineCollisioner, LineParser},
 };
 
 pub fn run() -> u32 {

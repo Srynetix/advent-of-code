@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::RuleSystem, INPUT};
+use super::{INPUT, common::RuleSystem};
 
 pub fn run() -> usize {
     RuleSystem::from_rules_and_values_alternative(INPUT).len()

@@ -1,8 +1,8 @@
 //! Part 1
 
 use super::{
-    common::{determine_loop_size, parse_keys, transform_subject_number_loop},
     INPUT,
+    common::{determine_loop_size, parse_keys, transform_subject_number_loop},
 };
 
 pub fn run() -> usize {

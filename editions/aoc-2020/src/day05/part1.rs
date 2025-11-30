@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::BoardingPass, INPUT};
+use super::{INPUT, common::BoardingPass};
 
 pub fn run() -> usize {
     BoardingPass::from_entries(INPUT)

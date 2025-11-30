@@ -214,7 +214,7 @@ impl FromStr for PatternLine {
 mod tests {
     use aoc_sx::maplit::hashmap;
 
-    use super::{find_solution, PatternCounter, PatternLine};
+    use super::{PatternCounter, PatternLine, find_solution};
 
     const SAMPLE_DATA: &str =
         "acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab | cdfeb fcadb cdfeb cdbaf";
@@ -289,7 +289,9 @@ mod tests {
 
         assert_eq!(
             output,
-            ["8394", "9781", "1197", "9361", "4873", "8418", "4548", "1625", "8717", "4315",]
+            [
+                "8394", "9781", "1197", "9361", "4873", "8418", "4548", "1625", "8717", "4315",
+            ]
         );
     }
 }

@@ -1,8 +1,8 @@
 //! Part 2
 
 use super::{
-    common::{Polymer, PolymerSum},
     INPUT,
+    common::{Polymer, PolymerSum},
 };
 
 pub fn run() -> u64 {

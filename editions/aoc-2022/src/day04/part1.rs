@@ -2,7 +2,7 @@
 
 use std::str::FromStr;
 
-use super::{common::Assignments, INPUT};
+use super::{INPUT, common::Assignments};
 
 pub fn run() -> usize {
     Assignments::from_str(INPUT)

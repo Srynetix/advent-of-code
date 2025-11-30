@@ -3,8 +3,8 @@
 use aoc_sx::{algo::fs::get_debug_path, indoc::indoc};
 
 use super::{
-    common::{save_paper_to_disk, TransparentPaper},
     INPUT,
+    common::{TransparentPaper, save_paper_to_disk},
 };
 
 pub fn run() -> String {

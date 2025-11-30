@@ -2,7 +2,7 @@
 
 use std::str::FromStr;
 
-use super::{common::ElfCalorieReader, INPUT};
+use super::{INPUT, common::ElfCalorieReader};
 
 pub fn run() -> u32 {
     ElfCalorieReader::from_str(INPUT).unwrap().max_calories()

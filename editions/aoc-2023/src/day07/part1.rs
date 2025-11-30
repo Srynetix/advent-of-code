@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::Game, INPUT};
+use super::{INPUT, common::Game};
 
 pub fn run() -> usize {
     Game::from_input(INPUT).total_winnings()

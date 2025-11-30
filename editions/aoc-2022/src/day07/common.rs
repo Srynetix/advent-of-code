@@ -344,11 +344,11 @@ impl ShellSession {
 
 #[cfg(test)]
 mod tests {
-    use aoc_sx::{indoc::indoc, itertools::Itertools};
+    use aoc_sx::indoc::indoc;
 
     use crate::day07::common::ShellDirectory;
 
-    use super::{Filesystem, ShellSession};
+    use super::ShellSession;
 
     const SAMPLE: &str = indoc! {r#"
         $ cd /

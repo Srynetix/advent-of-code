@@ -2,7 +2,7 @@
 
 use aoc_sx::algo::parse::parse_str_lines;
 
-use super::{common::BitAnalyzer, INPUT};
+use super::{INPUT, common::BitAnalyzer};
 
 pub fn run() -> u32 {
     let (gamma, epsilon) = BitAnalyzer::compute_gamma_and_epsilon(&parse_str_lines(INPUT));

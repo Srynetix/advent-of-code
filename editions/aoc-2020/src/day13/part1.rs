@@ -1,8 +1,8 @@
 //! Part 1
 
 use super::{
-    common::{extract_schedules, Scheduler},
     INPUT,
+    common::{Scheduler, extract_schedules},
 };
 
 pub fn run() -> usize {

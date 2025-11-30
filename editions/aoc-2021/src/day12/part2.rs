@@ -3,8 +3,8 @@
 use aoc_sx::algo::{fs::get_debug_path, parse::parse_str_lines};
 
 use super::{
-    common::{save_graph_to_disk, Graph},
     INPUT,
+    common::{Graph, save_graph_to_disk},
 };
 
 pub fn run() -> usize {

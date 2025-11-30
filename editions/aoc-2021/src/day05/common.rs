@@ -98,7 +98,7 @@ impl LineCollisioner {
     }
 
     pub fn count_overlaps(map: HashMap<PointI32, u32>) -> u32 {
-        map.iter().filter(|(_k, &v)| v >= 2).count() as u32
+        map.iter().filter(|&(_, &v)| v >= 2).count() as u32
     }
 }
 

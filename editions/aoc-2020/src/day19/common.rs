@@ -289,10 +289,10 @@ impl RuleSystem {
     }
 
     fn generate_regex_str(&self, rule: &Rule, regex_cache: &mut HashMap<usize, String>) -> String {
-        if let Some(rid) = rule.id {
-            if let Some(v) = regex_cache.get(&rid) {
-                return v.clone();
-            }
+        if let Some(rid) = rule.id
+            && let Some(v) = regex_cache.get(&rid)
+        {
+            return v.clone();
         }
 
         let r = match &rule.typ {

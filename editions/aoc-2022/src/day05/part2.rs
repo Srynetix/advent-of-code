@@ -1,8 +1,8 @@
 //! Part 2
 
 use super::{
-    common::{CraneType, Ship},
     INPUT,
+    common::{CraneType, Ship},
 };
 
 pub fn run() -> String {

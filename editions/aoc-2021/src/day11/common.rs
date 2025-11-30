@@ -163,7 +163,7 @@ impl From<&str> for Grid {
 mod tests {
     use aoc_sx::{algo::fs::get_debug_path, indoc::indoc};
 
-    use super::{save_grid_to_disk, Grid};
+    use super::{Grid, save_grid_to_disk};
 
     const SMALL_SAMPLE_DATA: &str = indoc! {"
         11111
@@ -192,7 +192,9 @@ mod tests {
         assert_eq!(grid.step(), 9);
         assert_eq!(
             grid.data,
-            [3, 4, 5, 4, 3, 4, 0, 0, 0, 4, 5, 0, 0, 0, 5, 4, 0, 0, 0, 4, 3, 4, 5, 4, 3]
+            [
+                3, 4, 5, 4, 3, 4, 0, 0, 0, 4, 5, 0, 0, 0, 5, 4, 0, 0, 0, 4, 3, 4, 5, 4, 3
+            ]
         );
 
         let path = get_debug_path().join("aoc2021-day11-small-sample.png");
@@ -201,7 +203,9 @@ mod tests {
         assert_eq!(grid.step(), 0);
         assert_eq!(
             grid.data,
-            [4, 5, 6, 5, 4, 5, 1, 1, 1, 5, 6, 1, 1, 1, 6, 5, 1, 1, 1, 5, 4, 5, 6, 5, 4]
+            [
+                4, 5, 6, 5, 4, 5, 1, 1, 1, 5, 6, 1, 1, 1, 6, 5, 1, 1, 1, 5, 4, 5, 6, 5, 4
+            ]
         );
     }
 

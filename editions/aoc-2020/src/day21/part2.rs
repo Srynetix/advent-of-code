@@ -1,11 +1,11 @@
 //! Part 2
 
 use super::{
+    INPUT,
     common::{
         count_ingredients_for_allergens, get_canonical_dangerous_list_as_string, parse_dishes,
         resolve_allergen_map,
     },
-    INPUT,
 };
 
 pub fn run() -> String {

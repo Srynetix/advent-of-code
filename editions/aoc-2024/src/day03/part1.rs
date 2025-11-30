@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::Puzzle, INPUT};
+use super::{INPUT, common::Puzzle};
 
 pub fn run() -> usize {
     Puzzle::from_input(INPUT).compute_multiplications() as usize

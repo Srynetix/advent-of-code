@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::ShellSession, INPUT};
+use super::{INPUT, common::ShellSession};
 
 pub fn run() -> usize {
     ShellSession::from_input(INPUT).sum_directories_total_size_less_than(100_000)

@@ -1,8 +1,8 @@
 //! Part 1
 
 use super::{
-    common::{parse_cups, run_steps},
     INPUT,
+    common::{parse_cups, run_steps},
 };
 
 pub fn run() -> String {

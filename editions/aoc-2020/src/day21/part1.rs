@@ -1,11 +1,11 @@
 //! Part 1
 
 use super::{
+    INPUT,
     common::{
         count_ingredients_for_allergens, extract_ingredients_without_allergens, parse_dishes,
         resolve_allergen_map,
     },
-    INPUT,
 };
 
 pub fn run() -> usize {

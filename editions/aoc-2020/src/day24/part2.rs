@@ -1,8 +1,8 @@
 //! Part 2
 
 use super::{
-    common::{parse_paths, HexGrid},
     INPUT,
+    common::{HexGrid, parse_paths},
 };
 
 pub fn run() -> usize {

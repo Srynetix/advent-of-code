@@ -1,8 +1,8 @@
 //! Part 2
 
 use super::{
-    common::{BinUtils, Packet},
     INPUT,
+    common::{BinUtils, Packet},
 };
 
 pub fn run() -> usize {

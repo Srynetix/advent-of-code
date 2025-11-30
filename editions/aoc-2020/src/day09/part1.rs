@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::XmasScanner, INPUT};
+use super::{INPUT, common::XmasScanner};
 
 pub fn run() -> usize {
     XmasScanner::parse_and_find_error(INPUT, 25).unwrap()

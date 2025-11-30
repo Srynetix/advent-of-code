@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::Cave, INPUT};
+use super::{INPUT, common::Cave};
 
 pub fn run() -> u64 {
     let cave = Cave::from(INPUT);

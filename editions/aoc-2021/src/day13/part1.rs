@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::TransparentPaper, INPUT};
+use super::{INPUT, common::TransparentPaper};
 
 pub fn run() -> usize {
     let paper = TransparentPaper::from(INPUT);

@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::SeatLayout, INPUT};
+use super::{INPUT, common::SeatLayout};
 
 pub fn run() -> usize {
     SeatLayout::from_input(INPUT)

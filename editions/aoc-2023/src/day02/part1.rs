@@ -1,8 +1,8 @@
 //! Part 1
 
 use super::{
-    common::{CubeSet, GameList},
     INPUT,
+    common::{CubeSet, GameList},
 };
 
 pub fn run() -> usize {

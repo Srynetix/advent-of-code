@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::JoltAnalyzer, INPUT};
+use super::{INPUT, common::JoltAnalyzer};
 
 pub fn run() -> usize {
     JoltAnalyzer::from_input(INPUT).count_adapter_permutations()

@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::ScratchcardPile, INPUT};
+use super::{INPUT, common::ScratchcardPile};
 
 pub fn run() -> usize {
     ScratchcardPile::from_input(INPUT).get_total_points_value()

@@ -82,7 +82,7 @@ pub fn parse_dishes(input: &str) -> Vec<Dish> {
 /// # Arguments
 ///
 /// * `input` - Input string
-pub fn count_ingredients_for_allergens(dishes: &[Dish]) -> AllergenCounts {
+pub fn count_ingredients_for_allergens(dishes: &[Dish]) -> AllergenCounts<'_> {
     let mut allergen_map = HashMap::new();
 
     for d in dishes {

@@ -2,7 +2,7 @@
 
 use aoc_sx::{algo::parse::parse_str_lines, tap::Pipe};
 
-use super::{common::NavParser, INPUT};
+use super::{INPUT, common::NavParser};
 
 pub fn run() -> u64 {
     NavParser::filter_incomplete_lines(&parse_str_lines(INPUT))

@@ -172,7 +172,7 @@ impl InputParser {
             for (rn, counter) in &mut positions {
                 let new_counter: Vec<_> = counter
                     .iter()
-                    .filter(|x| invalid_positions.get(rn).map_or(true, |v| !v.contains(x)))
+                    .filter(|x| invalid_positions.get(rn).is_none_or(|v| !v.contains(x)))
                     .copied()
                     .collect();
 

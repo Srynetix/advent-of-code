@@ -26,7 +26,7 @@ impl BitAnalyzer {
         let half_length = data.len() / 2;
         let sum = Self::compute_binary_sum(data);
 
-        let temp: Vec<bool> = sum.iter().map(|&n| ((n as usize) > half_length)).collect();
+        let temp: Vec<bool> = sum.iter().map(|&n| (n as usize) > half_length).collect();
         let epsilon: String = temp.iter().map(|&n| (!n as u32).to_string()).collect();
         let gamma: String = temp.iter().map(|&n| (n as u32).to_string()).collect();
 

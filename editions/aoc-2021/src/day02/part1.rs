@@ -2,7 +2,7 @@
 
 use aoc_sx::algo::parse::parse_str_lines;
 
-use super::{common::Submarine, INPUT};
+use super::{INPUT, common::Submarine};
 
 pub fn run() -> i32 {
     Submarine::from_moves(&parse_str_lines(INPUT)).score()

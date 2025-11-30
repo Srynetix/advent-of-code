@@ -2,7 +2,7 @@
 
 use std::str::FromStr;
 
-use super::{common::GameParser, INPUT};
+use super::{INPUT, common::GameParser};
 
 pub fn run() -> u32 {
     GameParser::from_str(INPUT)

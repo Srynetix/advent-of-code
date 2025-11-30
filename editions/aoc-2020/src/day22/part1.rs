@@ -1,8 +1,8 @@
 //! Part 1
 
 use super::{
-    common::{calculate_score, parse_decks, run_game, Player},
     INPUT,
+    common::{Player, calculate_score, parse_decks, run_game},
 };
 
 pub fn run() -> usize {

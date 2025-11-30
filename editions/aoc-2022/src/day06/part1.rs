@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::DataStream, INPUT};
+use super::{INPUT, common::DataStream};
 
 pub fn run() -> usize {
     DataStream::from_input(INPUT).start_of_packet_marker(4)

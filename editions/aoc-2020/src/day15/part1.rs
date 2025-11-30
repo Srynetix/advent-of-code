@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::MemoryGame, INPUT};
+use super::{INPUT, common::MemoryGame};
 
 pub fn run() -> usize {
     MemoryGame::from_str_input(INPUT).run_steps(2020)

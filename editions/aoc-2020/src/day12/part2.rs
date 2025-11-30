@@ -1,8 +1,8 @@
 //! Part 2
 
 use super::{
-    common::{compute_manhattan_distance, Ship},
     INPUT,
+    common::{Ship, compute_manhattan_distance},
 };
 
 pub fn run() -> usize {

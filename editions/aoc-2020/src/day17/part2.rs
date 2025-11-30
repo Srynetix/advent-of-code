@@ -1,6 +1,6 @@
 //! Part 2
 
-use super::{common::Conway4D, INPUT};
+use super::{INPUT, common::Conway4D};
 
 pub fn run() -> usize {
     let mut game = Conway4D::from(INPUT);

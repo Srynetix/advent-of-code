@@ -1,6 +1,6 @@
 //! Part 1
 
-use super::{common::BitmaskMemory, INPUT};
+use super::{INPUT, common::BitmaskMemory};
 
 pub fn run() -> usize {
     let mut mem = BitmaskMemory::new();

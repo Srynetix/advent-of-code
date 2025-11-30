@@ -1,8 +1,8 @@
 //! Part 2
 
 use super::{
-    common::{BagColor, BagSystem, INPUT_COLOR_NAME},
     INPUT,
+    common::{BagColor, BagSystem, INPUT_COLOR_NAME},
 };
 
 pub fn run() -> usize {

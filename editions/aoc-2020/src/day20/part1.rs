@@ -1,8 +1,8 @@
 //! Part 1
 
 use super::{
-    common::{TileMatcher, TileParser},
     INPUT,
+    common::{TileMatcher, TileParser},
 };
 
 pub fn run() -> usize {
