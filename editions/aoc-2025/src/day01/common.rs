@@ -18,20 +18,6 @@ pub struct Rotation {
     pub degrees: usize,
 }
 
-impl Rotation {
-    pub fn normalize(self) -> (Self, usize) {
-        let full_rotations = self.degrees / 100;
-        let remaining_degrees = self.degrees % 100;
-        (
-            Rotation {
-                direction: self.direction,
-                degrees: remaining_degrees,
-            },
-            full_rotations,
-        )
-    }
-}
-
 impl Display for Rotation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let dir = match self.direction {
