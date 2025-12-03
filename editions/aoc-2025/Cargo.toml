@@ -7,6 +7,6 @@ edition = "2024"
 
 [dependencies]
 aoc-sx = { path = "../../toolkit/aoc-sx"}
+itertools = { workspace = true }
 serde = { workspace = true }
 thiserror = { workspace = true }
-
