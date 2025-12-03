@@ -2,8 +2,6 @@
 
 use std::str::FromStr;
 
-use itertools::Itertools;
-
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct ProductIdRange {
     pub start: usize,
@@ -59,14 +57,10 @@ pub fn check_invalid_patterns_complex(range: ProductIdRange) -> Vec<usize> {
     'products: for product_id in range.start..=range.end {
         let id_str = product_id.to_string();
         let len = id_str.len();
+        let id_slice = id_str.as_bytes();
 
         'search: for window_size in 1..=(len / 2) {
-            let chunks = id_str
-                .chars()
-                .chunks(window_size)
-                .into_iter()
-                .map(|chunk| chunk.collect::<String>())
-                .collect::<Vec<String>>();
+            let chunks = id_slice.chunks(window_size).collect::<Vec<&[u8]>>();
             for i in 1..chunks.len() {
                 if chunks[i - 1] != chunks[i] {
                     continue 'search;
