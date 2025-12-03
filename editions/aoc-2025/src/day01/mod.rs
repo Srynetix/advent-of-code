@@ -65,6 +65,37 @@
 //! Because the dial points at <code>0</code> a total of three times during this process, the password in this example is <code><em>3</em></code>.
 //!
 //! Analyze the rotations in your attached document. <em>What's the actual password to open the door?</em>
+//!
+//! # --- Part Two ---
+//!
+//! You're sure that's the right password, but the door won't open. You knock, but nobody answers. You build a snowman while you think.
+//!
+//! As you're rolling the snowballs for your snowman, you find another security document that must have fallen into the snow:
+//!
+//! "Due to newer security protocols, please use <em>password method <span title="You should have seen the chaos when the Elves overflowed their 32-bit password method counter.">0x434C49434B</span></em> until further notice."
+//!
+//! You remember from the training seminar that "method 0x434C49434B" means you're actually supposed to count the number of times <em>any click</em> causes the dial to point at <code>0</code>, regardless of whether it happens during a rotation or at the end of one.
+//!
+//! Following the same rotations as in the above example, the dial points at zero a few extra times during its rotations:
+//!
+//! - The dial starts by pointing at 50.
+//! - The dial is rotated L68 to point at 82; during this rotation, it points at 0 once.
+//! - The dial is rotated L30 to point at 52.
+//! - The dial is rotated R48 to point at 0.
+//! - The dial is rotated L5 to point at 95.
+//! - The dial is rotated R60 to point at 55; during this rotation, it points at 0 once.
+//! - The dial is rotated L55 to point at 0.
+//! - The dial is rotated L1 to point at 99.
+//! - The dial is rotated L99 to point at 0.
+//! - The dial is rotated R14 to point at 14.
+//! - The dial is rotated L82 to point at 32; during this rotation, it points at 0 once.
+//!
+//!
+//! In this example, the dial points at <code>0</code> three times at the end of a rotation, plus three more times during a rotation. So, in this example, the new password would be <code><em>6</em></code>.
+//!
+//! Be careful: if the dial were pointing at <code>50</code>, a single rotation like <code>R1000</code> would cause the dial to point at <code>0</code> ten times before returning back to <code>50</code>!
+//!
+//! Using password method 0x434C49434B, <em>what is the password to open the door?</em>
 
 pub mod common;
 pub mod part1;

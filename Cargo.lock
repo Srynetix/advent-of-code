@@ -155,6 +155,7 @@ name = "aoc-2025"
 version = "0.1.0"
 dependencies = [
  "aoc-sx",
+ "itertools",
  "serde",
  "thiserror",
 ]
